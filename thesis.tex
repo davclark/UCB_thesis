@@ -34,25 +34,37 @@
 
 % Bibliography stuff:
 
-\newcommand{\newblock}{\par} % need this for some natbib internal bug
-\usepackage{natbib}
-\citestyle{aa}
-\bibliographystyle{yahapj}
-\setlength{\bibsep}{0ex} % single-space entries
+% \newcommand{\newblock}{\par} % need this for some natbib internal bug
+% \usepackage{natbib}
+% \citestyle{aa}
+% \bibliographystyle{yahapj}
+% \setlength{\bibsep}{0ex} % single-space entries
+\usepackage{apacite}
+\bibliographystyle{apacite}
+% DJC - The below was defined for natbib
 \def\bibpreamble{\addcontentsline{toc}{chapter}{Bibliography}} % get a good TOC entry
 
 
 % Other setup:
 
-\usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
+
+% DJC - There are some fairly gnarly problems between hyperref and apacite
+% For my purposes, it interferes with the pre-citation text in <>'s, so I don't
+% use this for now. Be nice to switch reference system to a more modern one
+% (like biber)
+% \usepackage[pdfborder={0 0 0}]{hyperref}
+% This was the original hyperref inclusion
+% \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
 \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
-\usepackage{aasmacros,amsmath,amssymb,graphicx}
+% DJC - added subfig, multirow here - other solutions are recommended for
+% tables, check if you get the chance!
+\usepackage{aasmacros,amsmath,amssymb,graphicx,subfig,multirow}
 \usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
 
 
 \begin{document}
 \ssp % single spacing
-\hypersetup{pageanchor=false}
+% DJC: \hypersetup{pageanchor=false}
 \include{setup}
 \maketitle
 \copyrightpage
@@ -61,14 +73,14 @@
 My work is awesome. Give me a Ph.D.
 \end{abstract}
 
-\hypersetup{pageanchor=true}
+% DJC: \hypersetup{pageanchor=true}
 \begin{frontmatter}
 
 \begin{dedication}
 \null\vfil
 {\large
 \begin{center}
-I dedicate this dissertation to graduate students everywhere.
+For my grandma.
 \end{center}}
 \null\vfil
 \end{dedication}
@@ -82,16 +94,29 @@ I dedicate this dissertation to graduate students everywhere.
 %% \addcontentsline{toc}{chapter}{List of Code Examples}
 
 \begin{acknowledgements}
-Too bad nobody helped me.
+Thanks for all the help!
 
 % Feel free to modify or remove this acknowledgment:
 This dissertation was typeset using the
-\href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}}
+% DJC switching to plain textsf
+% \href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}}
+\textsf{ucastrothesis}
 \LaTeX\ template.
 
 \end{acknowledgements}
 \end{frontmatter}
 
 \include{intro/intro}
-\bibliography{thesis}{}
+\include{assessments-of-ccc/assessments-of-ccc}
+\include{two-routes-estimation/two-routes-estimation}
+
+% These should get re-factored into proper chapters
+\include{experimental-description/experimental-aims}
+\include{experimental-description/experimental-plan}
+
+\appendix
+
+\include{graphical-models/graphical-models}
+
+\bibliography{proposal,fixed}{}
 \end{document}
