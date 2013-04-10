@@ -1,3 +1,15 @@
+Dav Clark's Ph.D. Thesis
+========================
+
+Copyright 2013, all rights reserved (for now), excepting that you have my full
+permission to borrow specific techniques I've used here for including graphics,
+bibliography, etc. But that'd be covered under fair use anyway, I think.
+
+This is based on the ucastrothesis, with modifications to use some LaTeX
+packages I'd already started using previously. My changes to not indicate a
+belief that my way is better - just that I'd already done some things my way!
+See below for more on the template.
+
 ucastrothesis
 =============
 
