@@ -1,15 +1,18 @@
-% This sample file is dedicated to the public domain.
 \documentclass[12pt]{myucthesis}
+\synctex=1
 
-%\nofiles
+% \nofiles
 % The above command prevents latex from writing its auxiliary
 % files. This is useful if you want to manually tweak them before you
-% generate your final PDF.
+% generate your final PDF. But it will break reference / bibliography
+% resolution!
 
 % XeTeX font setup. The microtype stuff gives fancy typography
 % improvements that make things look (very) subtly better.
 \usepackage{fontspec}
 \newfontfeature{Microtype}{protrusion=default;expansion=default;}
+% Times New Roman is installed by default, but Linux Libertine is classier and
+% Open Source
 \setmainfont[Microtype,Ligatures=TeX]{Linux Libertine O}
 %\setmainfont[Microtype,Ligatures=TeX]{Times New Roman}
 
@@ -33,38 +36,50 @@
 
 
 % Bibliography stuff:
+% DJC - I'm now using biblatex and bilatex-apa
+\usepackage[american]{babel}
+% This is overkill, used for i18n of quotes
+\usepackage{csquotes}
+\usepackage[style=apa]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{thesis.bib}
+\addbibresource{fixed.bib}
 
 % \newcommand{\newblock}{\par} % need this for some natbib internal bug
 % \usepackage{natbib}
 % \citestyle{aa}
 % \bibliographystyle{yahapj}
 % \setlength{\bibsep}{0ex} % single-space entries
-\usepackage{apacite}
-\bibliographystyle{apacite}
-% DJC - The below was defined for natbib
-\def\bibpreamble{\addcontentsline{toc}{chapter}{Bibliography}} % get a good TOC entry
+
+% These were uncommented prior to adding biblatex
+% \usepackage{apacite}
+% \bibliographystyle{apacite}
+% DJC - The below was defined for natbib. BibLaTeX' \printbibliography provides a
+% different mechanism
+% \def\bibpreamble{\addcontentsline{toc}{chapter}{Bibliography}} % get a good TOC entry
 
 
 % Other setup:
 
 
 % DJC - There are some fairly gnarly problems between hyperref and apacite
-% For my purposes, it interferes with the pre-citation text in <>'s, so I don't
-% use this for now. Be nice to switch reference system to a more modern one
-% (like biber)
-% \usepackage[pdfborder={0 0 0}]{hyperref}
+% For my purposes, it interferes with the pre-citation text in <>'s, so don't
+% use this with BibTeX. With BibLaTeX, you should load it after the biblatex
+% package.
+\usepackage[pdfborder={0 0 0}]{hyperref}
 % This was the original hyperref inclusion
 % \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
 \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
 % DJC - added subfig, multirow here - other solutions are recommended for
-% tables, check if you get the chance!
-\usepackage{aasmacros,amsmath,amssymb,graphicx,subfig,multirow}
+% tables below, check if you get the chance!
+\usepackage{aasmacros,amsmath,amssymb,graphicx,subfig,multirow,hologo}
 \usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
 
 
 \begin{document}
 \ssp % single spacing
-% DJC: \hypersetup{pageanchor=false}
+% DJC: hyperref should work now!
+\hypersetup{pageanchor=false}
 \include{setup}
 \maketitle
 \copyrightpage
@@ -73,14 +88,15 @@
 My work is awesome. Give me a Ph.D.
 \end{abstract}
 
-% DJC: \hypersetup{pageanchor=true}
+% DJC: another hyperref config
+\hypersetup{pageanchor=true}
 \begin{frontmatter}
 
 \begin{dedication}
 \null\vfil
 {\large
 \begin{center}
-For my grandma.
+For my grandma. And other people who also helped.
 \end{center}}
 \null\vfil
 \end{dedication}
@@ -97,11 +113,11 @@ For my grandma.
 Thanks for all the help!
 
 % Feel free to modify or remove this acknowledgment:
-This dissertation was typeset using the
-% DJC switching to plain textsf
-% \href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}}
-\textsf{ucastrothesis}
-\LaTeX\ template.
+This dissertation was based on the
+\href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}}
+% DJC non-hyperref alternative with plain textsf
+% \textsf{ucastrothesis}
+template, processed with \hologo{XeLaTeX} using the Linux Libertine font.
 
 \end{acknowledgements}
 \end{frontmatter}
@@ -114,9 +130,12 @@ This dissertation was typeset using the
 \include{experimental-description/experimental-aims}
 \include{experimental-description/experimental-plan}
 
+% \bibliography{proposal,fixed}{}
+% This is how biblatex does it
+\printbibliography[heading=bibintoc]
+
 \appendix
 
 \include{graphical-models/graphical-models}
 
-\bibliography{proposal,fixed}{}
 \end{document}

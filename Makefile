@@ -37,12 +37,12 @@ cleans += graphical-models/graphical-models.aux
 # rewritten by pdfLaTeX.
 
 deps += myucthesis.cls uct12.clo aasmacros.sty mydeluxetable.sty \
-  setup.tex fixed.bib proposal.bib yahapj.bst
+  setup.tex fixed.bib thesis.bib yahapj.bst
 cleans += thesis.pdf setup.aux .latexwork/*
 toplevels += thesis.pdf
 
 thesis.pdf: thesis.tex $(deps)
-	./latexdriver -x -l -b $< $@
+	latexmk -xelatex -bibtex thesis
 
 
 # Approval page
@@ -51,12 +51,23 @@ cleans += approvalpage.aux approvalpage.log approvalpage.pdf
 toplevels += approvalpage.pdf
 
 approvalpage.pdf: approvalpage.tex $(deps)
-	./latexdriver -x -l $< $@
+	latexmk -xelatex -bibtex approvalpage
 
 
 # Helpers
 
+# This is a copy from my proposal... not tested yet! You'll still need to copy
+# over the python file, etc.
+diff:
+	./git_texdiff.py proposal_diff_base
+	cd diff
+	latexmk -pdf -bibtex thesis-proposal.tex
+	# -bibtex required to delete *.bbl files
+	latexmk -bibtex -c
+	cd ..
+
 all: $(toplevels)
 
 clean:
+	latexmk -bibtex -c
 	-rm -f $(cleans)
