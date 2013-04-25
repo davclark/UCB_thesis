@@ -1,5 +1,7 @@
 *.aux
-/.latexwork
 /thesis.pdf
+/thesis.synctex.gz
+/thesis.run.xml
+/documentation/
 /approvalpage.pdf
 .*.swp
