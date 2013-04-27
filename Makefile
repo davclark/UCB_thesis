@@ -29,8 +29,8 @@ cleans += experimental-description/experimental-aims.aux experimental-descriptio
 
 ## Appendices
 
-deps += graphical-models/graphical-models.tex
-cleans += graphical-models/graphical-models.aux
+deps += appendices/graphical-models/graphical-models.tex appendices/kappa-extension/kappa-extension.tex
+cleans += graphical-models/graphical-models.aux appendices/kappa-extension/kappa-extension.aux
 
 # The thesis itself. We move the PDF to a new filename so that viewers
 # don't keep on trying to reload the file as it's being written and
