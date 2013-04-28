@@ -456,34 +456,36 @@ by\par
 \vspace{3ex}
 University of California, {\@campus}\par
 \vspace{3ex}
-{\@chair}, Chair}
+{\@chair}, Co-chair\\
+{\@chairb}, Co-chair}
 \vspace{3ex}
 \end{center}}
 
 \def\endabstract{\par\vfil\null\end{alwayssingle}
 }
 
-\def\abstractsignature{
-\hspace*{\fill}
-\begin{minipage}[t]{3.25in}
-\addtolength{\baselineskip}{-.5\baselineskip}
-\vspace{1.7cm}
-\rule{3.2in}{.5pt}\\
-\@chair\\
-Dissertation Committee Chair
-\vspace{-0.3cm}
-\end{minipage}}
-
-\def\abstractsignatureb{
-\hspace*{\fill}
-\begin{minipage}[t]{3.25in}
-\addtolength{\baselineskip}{-.5\baselineskip}
-\vspace{1.7cm}
-\rule{3.2in}{.5pt}\\
-\@chairb\\
-Dissertation Committee Co-Chair
-\vspace{-0.3cm}
-\end{minipage}}
+% I don't think these actually do anything - but leaving around just in case
+% \def\abstractsignature{
+% \hspace*{\fill}
+% \begin{minipage}[t]{3.25in}
+% \addtolength{\baselineskip}{-.5\baselineskip}
+% \vspace{1.7cm}
+% \rule{3.2in}{.5pt}\\
+% \@chair\\
+% Dissertation Committee Co-Chair
+% \vspace{-0.3cm}
+% \end{minipage}}
+% 
+% \def\abstractsignatureb{
+% \hspace*{\fill}
+% \begin{minipage}[t]{3.25in}
+% \addtolength{\baselineskip}{-.5\baselineskip}
+% \vspace{1.7cm}
+% \rule{3.2in}{.5pt}\\
+% \@chairb\\
+% Dissertation Committee Co-Chair
+% \vspace{-0.3cm}
+% \end{minipage}}
 
 % DEDICATION
 %
