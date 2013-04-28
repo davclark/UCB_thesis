@@ -33,6 +33,10 @@
 %%%			   are in the font selection commands in the option
 %%%			   files uct1x.clo.
 %%%
+%%%            CHANGES by Dav Clark:
+%%%            fixed endfigure and endfloat (should use \def instead of \let)
+%%%            Commented out vestigial abstractsignature def(s)
+%%%
 %%%			   UCTHESIS.STY v2.7 is based on the standard
 %%%			   report.sty as modified by Mittelbach and Schopf in
 %%%			   Jan 1992.  The primary differences are (1) the use
@@ -1141,7 +1145,7 @@ University of California, {\@campus}\par
 \def\ext@figure{lof}
 \def\fnum@figure{\figurename~\thefigure}
 \def\figure{\@float{figure}}
-\let\endfigure\end@float
+\def\endfigure{\end@float}
 \@namedef{figure*}{\@dblfloat{figure}}
 \@namedef{endfigure*}{\end@dblfloat}
 
@@ -1155,7 +1159,7 @@ University of California, {\@campus}\par
 \def\ext@table{lot}
 \def\fnum@table{\tablename~\thetable}
 \def\table{\@float{table}}
-\let\endtable\end@float
+\def\endtable{\end@float}
 \@namedef{table*}{\@dblfloat{table}}
 \@namedef{endtable*}{\end@dblfloat}
 

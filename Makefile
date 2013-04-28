@@ -16,11 +16,18 @@ cleans += intro/intro.aux # intro/processed.tex
 
 ## Chapters
 
-deps += assessments-of-ccc/assessments-of-ccc.tex
-cleans += assessments-of-ccc/assessments-of-ccc.aux
+deps += mechanism/mechanism.tex
+cleans += mechanism/mechanism.aux
 
 deps += two-routes-estimation/two-routes-estimation.tex
 cleans += two-routes-estimation/two-routes-estimation.aux
+
+deps += pro-ndi/pro-ndi.tex
+cleans += pro-ndi/pro-ndi.tex
+
+deps += evil-ndi/evil-ndi.tex
+cleans += evil-ndi/evil-ndi.tex
+
 
 
 # These should get re-factored into proper chapters

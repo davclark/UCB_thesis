@@ -1,4 +1,6 @@
 \documentclass[12pt]{myucthesis}
+% This enables, e.g., clicking in Skim's PDF view (on OSX) to open the relevant
+% source file in Vim
 \synctex=1
 
 % \nofiles
@@ -37,44 +39,31 @@
 
 % Bibliography stuff:
 % DJC - I'm now using biblatex and bilatex-apa
+% This is 1i18n overkill, including i18n of quotes
 \usepackage[american]{babel}
-% This is overkill, used for i18n of quotes
 \usepackage{csquotes}
+
 \usepackage[style=apa]{biblatex}
+
+% More i18n overkill
 \DeclareLanguageMapping{american}{american-apa}
+
 \addbibresource{thesis.bib}
 \addbibresource{fixed.bib}
 
-% \newcommand{\newblock}{\par} % need this for some natbib internal bug
-% \usepackage{natbib}
-% \citestyle{aa}
-% \bibliographystyle{yahapj}
-% \setlength{\bibsep}{0ex} % single-space entries
-
-% These were uncommented prior to adding biblatex
-% \usepackage{apacite}
-% \bibliographystyle{apacite}
-% DJC - The below was defined for natbib. BibLaTeX' \printbibliography provides a
-% different mechanism
-% \def\bibpreamble{\addcontentsline{toc}{chapter}{Bibliography}} % get a good TOC entry
-
-
 % Other setup:
 
-
-% DJC - There are some fairly gnarly problems between hyperref and apacite
-% For my purposes, it interferes with the pre-citation text in <>'s, so don't
-% use this with BibTeX. With BibLaTeX, you should load it after the biblatex
-% package.
-\usepackage[pdfborder={0 0 0}]{hyperref}
-% This was the original hyperref inclusion
+% Note: with BibLaTeX, you should load hyperref after the biblatex package.
+\usepackage[pdfborder={0 0 0},pdfusetitle]{hyperref}
+% This was the original hyperref inclusion with color
 % \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
 \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
-% DJC - added subfig, multirow here - other solutions are recommended for
-% tables below, check if you get the chance!
-\usepackage{aasmacros,amsmath,amssymb,graphicx,subfig,multirow,hologo}
+\usepackage{aasmacros,amsmath,amssymb,graphicx}
 \usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
 
+% DJC - added subfig, multirow, hologo here - the custom 'mydeluxtable' above is
+% included in the template, check if you get the chance!
+\usepackage{subfig,multirow,hologo}
 
 \begin{document}
 \ssp % single spacing
@@ -123,8 +112,10 @@ template, processed with \hologo{XeLaTeX} using the Linux Libertine font.
 \end{frontmatter}
 
 \include{intro/intro}
-\include{assessments-of-ccc/assessments-of-ccc}
+\include{mechanism/mechanism}
 \include{two-routes-estimation/two-routes-estimation}
+\include{pro-ndi/pro-ndi}
+\include{evil-ndi/evil-ndi}
 
 % These should get re-factored into proper chapters
 \include{experimental-description/experimental-aims}
@@ -138,5 +129,7 @@ template, processed with \hologo{XeLaTeX} using the Linux Libertine font.
 
 \include{appendices/kappa-extension/kappa-extension}
 \include{appendices/graphical-models/graphical-models}
+\include{appendices/survey-items/survey-items}
+\include{appendices/numbers/numbers}
 
 \end{document}
