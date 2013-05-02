@@ -5,3 +5,13 @@
 /documentation/
 /approvalpage.pdf
 .*.swp
+/*.fdb_latexmk
+/*.fls
+/*.log
+/thesis.bbl
+/thesis.bcf
+/thesis.blg
+/thesis.lof
+/thesis.lot
+/thesis.out
+/thesis.toc
