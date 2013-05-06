@@ -23,10 +23,10 @@ deps += two-routes-estimation/two-routes-estimation.tex
 cleans += two-routes-estimation/two-routes-estimation.aux
 
 deps += pro-ndi/pro-ndi.tex
-cleans += pro-ndi/pro-ndi.tex
+cleans += pro-ndi/pro-ndi.aux
 
 deps += evil-ndi/evil-ndi.tex
-cleans += evil-ndi/evil-ndi.tex
+cleans += evil-ndi/evil-ndi.aux
 
 
 
@@ -36,8 +36,8 @@ cleans += experimental-description/experimental-aims.aux experimental-descriptio
 
 ## Appendices
 
-deps += appendices/graphical-models/graphical-models.tex appendices/kappa-extension/kappa-extension.tex
-cleans += graphical-models/graphical-models.aux appendices/kappa-extension/kappa-extension.aux
+deps += appendices/graphical-models/graphical-models.tex appendices/kappa-extension/kappa-extension.tex appendices/400words/400words.tex
+cleans += graphical-models/graphical-models.aux appendices/kappa-extension/kappa-extension.aux appendices/400words/400words.aux
 
 # The thesis itself. We move the PDF to a new filename so that viewers
 # don't keep on trying to reload the file as it's being written and
