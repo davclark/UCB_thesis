@@ -11,12 +11,48 @@
 
 % XeTeX font setup. The microtype stuff gives fancy typography
 % improvements that make things look (very) subtly better.
+% DJC - I'm doing all kinds of fussing around to get decent math type setting
+
+% This lets us load OpenType fonts from the system without any fuss
 \usepackage{fontspec}
+% \usepackage{aasmacros,amsmath,amssymb}
+% Note that if you use this, you need to do it after amsmath (and prehaps other
+% ams things) Using unicode-math as recommended by the libertine package
+% documentation
+% mathspec would also need to be defined after amsmath
+% This is useful if you decide to use Libertine
+\usepackage[libertine]{newtxmath}
+% I have no idea what this actually does, but it's related
+% \usepackage{newtxtext}
+
+% This is one approach to doing maths in the context of libertine
+% \usepackage[partial=upright,nabla=upright]{unicode-math}
+% \usepackage{unicode-math}
+
+% I am fairly certain this is a complete waste of time...
 \newfontfeature{Microtype}{protrusion=default;expansion=default;}
 % Times New Roman is installed by default, but Linux Libertine is classier and
 % Open Source
+
+% Handled more straightforwardly (and without extra installs!) just using the
+% libertine argument in TeX Live
+
+% \setmainfont[Microtype,Ligatures=TeX]{TeX Gyre Pagella}
 \setmainfont[Microtype,Ligatures=TeX]{Linux Libertine O}
-%\setmainfont[Microtype,Ligatures=TeX]{Times New Roman}
+% \setmainfont[Microtype,Ligatures=TeX]{Times New Roman}
+
+% \setmonofont{TeX Gyre Heros}
+\setmonofont[Microtype]{Linux Libertine Mono O}
+
+% Note - there is no corresponding _non_ math font for Asana (i.e., no bold...)
+% \setmathfont{Asana Math}
+% \setmathfont[Microtype]{TeX Gyre Pagella Math}
+% \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
+% \setmathfont[Scale=MatchLowercase]{Neo Euler} 
+% \setmathfont[range=\mathup]{Linux Libertine O}
+% \setmathfont[range=\mathit]{Linux Libertine O Italic}
+% \setmathfont[range=\mathbfup]{Linux Libertine O Bold}
+% \setmathfont[range=\mathbfit]{Linux Libertine O Bold Italic}
 
 % Page layout. The fancyhdr package may complain about the need for a
 % larger headheight, depending on how long chapter titles are; if left
@@ -58,7 +94,8 @@
 % This was the original hyperref inclusion with color
 % \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
 \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
-\usepackage{aasmacros,amsmath,amssymb,graphicx}
+\usepackage{graphicx}
+
 \usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
 
 % DJC - added subfig, multirow, hologo here - the custom 'mydeluxtable' above is
@@ -67,7 +104,6 @@
 
 \begin{document}
 \ssp % single spacing
-% DJC: hyperref should work now!
 \hypersetup{pageanchor=false}
 \include{setup}
 \maketitle
@@ -86,6 +122,7 @@ My work is awesome. Give me a Ph.D.
 {\large
 \begin{center}
 For my grandma. And other people who also helped.
+% Shout out to Larry Goldfarb.
 \end{center}}
 \null\vfil
 \end{dedication}
