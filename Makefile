@@ -49,7 +49,7 @@ cleans += thesis.pdf setup.aux .latexwork/*
 toplevels += thesis.pdf
 
 thesis.pdf: thesis.tex $(deps)
-	latexmk -xelatex -bibtex thesis
+	latexmk -pdf -pdflatex="lualatex -synctex=1 --file-line-error %O %S" -bibtex thesis
 
 
 # Approval page
