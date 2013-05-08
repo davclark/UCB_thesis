@@ -14,8 +14,9 @@
 % It's already required by unicode-math, but I include it for reference.
 \usepackage{fontspec}
 
-% \usepackage{aasmacros,amsmath,amssymb}
-% Note that if you use this, you need to do it after amsmath (and prehaps other
+% \usepackage{amsmath,amssymb}
+
+% Note that if you use unicode-math, you need to do it after amsmath (and prehaps other
 % ams things) Using unicode-math as recommended by the libertine package
 % documentation
 
@@ -25,27 +26,22 @@
 % What can I say, I love the french
 \frenchspacing
 
-% XeTeX font setup. The microtype stuff gives fancy typography
-% improvements that make things look (very) subtly better.
+% microtype enables subtle typography improvements.
 % Note that in XeTeX, expansion is disabled, and so some line breaks get screwed
 % up (and you need to manually include hyphens or similar)
 \usepackage{microtype}
 % DJC - I'm doing all kinds of fussing around to get decent math type setting
-% Oh fussiness! Note that we don't need to include the microtype package
+% Oh fussiness! The below is an alternative way to use microtype (that didn’t
+% work properly for me)
 % \newfontfeature{Microtype}{protrusion=default;expansion=default;}
 
-% Numbers=OldStyle can only be used on the regular Pagella font
+% NB: Numbers=OldStyle can only be used on the regular Pagella font
+% The Microtype option for set*font is redundant with the microtype package
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
 
 \setmonofont{TeX Gyre Heros}
 
 \setmathfont{TG Pagella Math}
-
-% \setmainfont[Microtype,Ligatures=TeX]{TeX Gyre Pagella}
-% 
-% \setmonofont[Microtype]{TeX Gyre Heros}
-% 
-% \setmathfont[Microtype]{TeX Gyre Pagella Math}
 
 % Page layout. The fancyhdr package may complain about the need for a
 % larger headheight, depending on how long chapter titles are; if left
@@ -70,7 +66,8 @@
 % Bibliography stuff:
 % DJC - I'm now using biblatex and bilatex-apa
 % This is 1i18n overkill, including i18n of quotes
-% Also - folks seem to think polyglossia is better now...
+% Also - folks seem to think polyglossia is better now (only works in XeTeX, not
+% LuaTeX)
 \usepackage[american]{babel}
 \usepackage{csquotes}
 
@@ -91,12 +88,29 @@
 \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
 \usepackage{graphicx}
 
-\usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
+% It strikes me as not worth checking into this given its age
+% \usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
 
-% DJC - added subfig, multirow, hologo here - the custom 'mydeluxtable' above is
-% included in the template, check if you get the chance!
+% DJC - my extra packages here
 % This is where warnings about the caption package come from
 \usepackage{subfig,multirow,hologo}
+% This might be useful for simpler tables. For text heavy tables with
+% Excel-style CSV, tex-based solutions are going to choke!
+% \usepackage{pgfplotstable}
+% Mostly just to supress a warning
+% \pgfplotsset{compat=1.8}
+% \pgfplotstableset{sci zerofill}%,col sep=comma}
+
+% pgfplotstable recommends
+% This will allow some of the nicer layout options for number alignment, etc.
+% \usepackage{array}
+
+% Better spacing and rules (lines, not laws)
+\usepackage{booktabs}
+
+% May also need to use this if we decide to have some huge tables:
+% But make sure we load things in the right order!
+% \usepackage{longtable}
 
 \begin{document}
 \ssp % single spacing
@@ -117,8 +131,8 @@ My work is awesome. Give me a Ph.D.
 \null\vfil
 {\large
 \begin{center}
-For my grandma. And other people who also helped.
-% Shout out to Larry Goldfarb.
+With love and respect for all that is good—in particular the unwavering
+support of my grandma (even if she doesn’t fully accept climate change).
 \end{center}}
 \null\vfil
 \end{dedication}
@@ -134,12 +148,13 @@ For my grandma. And other people who also helped.
 \begin{acknowledgements}
 Thanks for all the help!
 
+% Shout out to Larry Goldfarb.
 % Feel free to modify or remove this acknowledgment:
 This dissertation was based on the
 \href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}}
 % DJC non-hyperref alternative with plain textsf
 % \textsf{ucastrothesis}
-template, processed with \hologo{LuaLaTeX} using the Pagella and Heros fonts
+template. It was typeset with \hologo{LuaLaTeX} using the Pagella and Heros fonts
 from the \TeX\ Gyre project.
 
 \end{acknowledgements}
