@@ -36,20 +36,34 @@ cleans += experimental-description/experimental-aims.aux experimental-descriptio
 
 ## Appendices
 
-deps += appendices/graphical-models/graphical-models.tex appendices/kappa-extension/kappa-extension.tex appendices/400words/400words.tex
-cleans += graphical-models/graphical-models.aux appendices/kappa-extension/kappa-extension.aux appendices/400words/400words.aux
+deps += appendices/graphical-models/graphical-models.tex \
+		appendices/kappa-extension/kappa-extension.tex \
+		appendices/400words/400words.tex \
+		appendices/survey-items/survey-items.tex \
+		appendices/numbers/numbers.tex \
+		appendices/NDI-intervention/NDI-intervention.tex
+
+cleans += graphical-models/graphical-models.aux \
+		appendices/kappa-extension/kappa-extension.aux \
+		appendices/400words/400words.aux \
+		appendices/survey-items/survey-items.aux \
+		appendices/numbers/numbers.aux \
+		appendices/NDI-intervention/NDI-intervention.aux
 
 # The thesis itself. We move the PDF to a new filename so that viewers
 # don't keep on trying to reload the file as it's being written and
 # rewritten by pdfLaTeX.
 
-deps += myucthesis.cls uct12.clo aasmacros.sty mydeluxetable.sty \
-  setup.tex fixed.bib thesis.bib yahapj.bst
+deps += myucthesis.cls uct12.clo
+bibdeps = setup.tex fixed.bib thesis.bib
 cleans += thesis.pdf setup.aux .latexwork/*
 toplevels += thesis.pdf
 
-thesis.pdf: thesis.tex $(deps)
+thesis.pdf: thesis.tex $(deps) $(bibdeps)
 	latexmk -pdf -pdflatex="lualatex -synctex=1 --file-line-error %O %S" -bibtex thesis
+
+nobib: thesis.tex $(deps)
+	lualatex -synctex=1 --file-line-error thesis
 
 
 # Approval page

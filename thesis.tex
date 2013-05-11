@@ -21,7 +21,11 @@
 % documentation
 
 % This is one approach to doing maths in the context of libertine
+% These are options that don't matter to this document!
 % \usepackage[partial=upright,nabla=upright]{unicode-math}
+% Note that none of the 4 styles available in unicode-math adhere to APA! french
+% is closest / easiest, as only upright latin characters are wrong (they should
+% be italicised, but they are not). Can use \mathit
 \usepackage[math-style=french]{unicode-math}
 % What can I say, I love the french
 \frenchspacing
@@ -35,11 +39,14 @@
 % work properly for me)
 % \newfontfeature{Microtype}{protrusion=default;expansion=default;}
 
+% This keeps things like `` and --- working
+\defaultfontfeatures{Ligatures=TeX}
 % NB: Numbers=OldStyle can only be used on the regular Pagella font
 % The Microtype option for set*font is redundant with the microtype package
-\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\setmainfont{TeX Gyre Pagella}
 
-\setmonofont{TeX Gyre Heros}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{TeX Gyre Cursor}
 
 \setmathfont{TG Pagella Math}
 
@@ -93,7 +100,9 @@
 
 % DJC - my extra packages here
 % This is where warnings about the caption package come from
-\usepackage{subfig,multirow,hologo}
+\usepackage{subfig,multirow,hologo,underscore}
+% Make it easier to print complicated tables
+\usepackage{longtable,siunitx,tabu}
 % This might be useful for simpler tables. For text heavy tables with
 % Excel-style CSV, tex-based solutions are going to choke!
 % \usepackage{pgfplotstable}
@@ -132,7 +141,7 @@ My work is awesome. Give me a Ph.D.
 {\large
 \begin{center}
 With love and respect for all that is good—in particular the unwavering
-support of my grandma (even if she doesn’t fully accept climate change).
+support of my grandma (even if she doesn't fully accept climate change).
 \end{center}}
 \null\vfil
 \end{dedication}
@@ -160,17 +169,17 @@ from the \TeX\ Gyre project.
 \end{acknowledgements}
 \end{frontmatter}
 
-\include{intro/intro}
+% \include{intro/intro}
 \include{mechanism/mechanism}
-\include{two-routes-estimation/two-routes-estimation}
-\include{pro-ndi/pro-ndi}
-\include{evil-ndi/evil-ndi}
+% \include{two-routes-estimation/two-routes-estimation}
+% \include{pro-ndi/pro-ndi}
+% \include{evil-ndi/evil-ndi}
 
 % These should get re-factored into proper chapters
-\include{experimental-description/experimental-aims}
-\include{experimental-description/experimental-plan}
+% \include{experimental-description/experimental-aims}
+% \include{experimental-description/experimental-plan}
 
-\include{conclusion/conclusion}
+% \include{conclusion/conclusion}
 
 % \bibliography{proposal,fixed}{}
 % This is how biblatex does it
@@ -178,10 +187,11 @@ from the \TeX\ Gyre project.
 
 \appendix
 
-\include{appendices/kappa-extension/kappa-extension}
-\include{appendices/graphical-models/graphical-models}
-\include{appendices/400words/400words}
+% \include{appendices/kappa-extension/kappa-extension}
+% \include{appendices/graphical-models/graphical-models}
 \include{appendices/survey-items/survey-items}
-\include{appendices/numbers/numbers}
+% \include{appendices/400words/400words}
+% \include{appendices/NDI-intervention/NDI-intervention}
+% \include{appendices/numbers/numbers}
 
 \end{document}
