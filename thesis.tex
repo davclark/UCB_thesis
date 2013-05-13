@@ -44,10 +44,8 @@
 % NB: Numbers=OldStyle can only be used on the regular Pagella font
 % The Microtype option for set*font is redundant with the microtype package
 \setmainfont{TeX Gyre Pagella}
-
 \setsansfont{TeX Gyre Heros}
 \setmonofont{TeX Gyre Cursor}
-
 \setmathfont{TG Pagella Math}
 
 % Page layout. The fancyhdr package may complain about the need for a
@@ -117,6 +115,8 @@
 % Better spacing and rules (lines, not laws)
 \usepackage{booktabs}
 
+\usepackage{pdfpages}
+
 % May also need to use this if we decide to have some huge tables:
 % But make sure we load things in the right order!
 % \usepackage{longtable}
@@ -163,8 +163,8 @@ This dissertation was based on the
 \href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}}
 % DJC non-hyperref alternative with plain textsf
 % \textsf{ucastrothesis}
-template. It was typeset with \hologo{LuaLaTeX} using the Pagella and Heros fonts
-from the \TeX\ Gyre project.
+template. It was typeset with \hologo{LuaLaTeX} using the Pagella and Heros
+fonts from the \TeX\ Gyre project.
 
 \end{acknowledgements}
 \end{frontmatter}
@@ -190,7 +190,8 @@ from the \TeX\ Gyre project.
 % \include{appendices/kappa-extension/kappa-extension}
 % \include{appendices/graphical-models/graphical-models}
 \include{appendices/survey-items/survey-items}
-% \include{appendices/400words/400words}
+\include{appendices/400words/400words}
+\include{appendices/coding/coding}
 % \include{appendices/NDI-intervention/NDI-intervention}
 % \include{appendices/numbers/numbers}
 
