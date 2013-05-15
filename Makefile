@@ -66,7 +66,10 @@ thesis.pdf: thesis.tex $(deps) $(bibdeps)
 	lualatex -synctex=1 --file-line-error thesis
 
 latexmk: thesis.tex $(deps)
-	latexmk -pdf -pdflatex="lualatex -synctex=1 --file-line-error %O %S" -bibtex thesis
+	latexmk -pdf thesis
+
+continuous: thesis.tex $(deps)
+	latexmk -pvc -pdf  thesis
 
 
 # Approval page
@@ -75,7 +78,8 @@ cleans += approvalpage.aux approvalpage.log approvalpage.pdf
 toplevels += approvalpage.pdf
 
 approvalpage.pdf: approvalpage.tex $(deps)
-	latexmk -xelatex -bibtex approvalpage
+	# latexmk -xelatex -bibtex approvalpage
+	echo 'Not set up right'
 
 
 # Helpers
