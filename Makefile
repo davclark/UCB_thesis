@@ -43,7 +43,8 @@ deps += appendices/graphical-models/graphical-models.tex \
 		appendices/numbers/numbers.tex \
 		appendices/NDI-intervention/NDI-intervention.tex \
 		appendices/coding/codingpacket-blind-Oct26.pdf \
-		appendices/coding/coding.tex
+		appendices/coding/coding.tex \
+		appendices/imputation/imputation.tex
 
 cleans += graphical-models/graphical-models.aux \
 		appendices/kappa-extension/kappa-extension.aux \
@@ -51,7 +52,8 @@ cleans += graphical-models/graphical-models.aux \
 		appendices/survey-items/survey-items.aux \
 		appendices/numbers/numbers.aux \
 		appendices/NDI-intervention/NDI-intervention.aux \
-		appendices/coding/coding.aux
+		appendices/coding/coding.aux \
+		appendices/imputation/imputation.aux
 
 # The thesis itself. We move the PDF to a new filename so that viewers
 # don't keep on trying to reload the file as it's being written and
@@ -65,11 +67,12 @@ toplevels += thesis.pdf
 thesis.pdf: thesis.tex $(deps) $(bibdeps)
 	lualatex -synctex=1 --file-line-error thesis
 
+# Note - the below are relying on config in latexmkrc (also in this dir)
 latexmk: thesis.tex $(deps)
-	latexmk -pdf thesis
+	latexmk thesis
 
 continuous: thesis.tex $(deps)
-	latexmk -pvc -pdf  thesis
+	latexmk -pvc thesis
 
 
 # Approval page
@@ -78,9 +81,7 @@ cleans += approvalpage.aux approvalpage.log approvalpage.pdf
 toplevels += approvalpage.pdf
 
 approvalpage.pdf: approvalpage.tex $(deps)
-	# latexmk -xelatex -bibtex approvalpage
-	echo 'Not set up right'
-
+	latexmk approvalpage
 
 # Helpers
 
@@ -97,5 +98,5 @@ diff:
 all: $(toplevels)
 
 clean:
-	latexmk -bibtex -c
+	latexmk -c
 	-rm -f $(cleans)

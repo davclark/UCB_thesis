@@ -16,11 +16,10 @@
 
 % \usepackage{amsmath,amssymb}
 
-% Note that if you use unicode-math, you need to do it after amsmath (and prehaps other
-% ams things) Using unicode-math as recommended by the libertine package
-% documentation
+% Note that if you use unicode-math, you need to do it after amsmath (and
+% prehaps other ams things, and certainly mathtools)
 
-% This is one approach to doing maths in the context of libertine
+% This is one approach to doing maths with the modern opentype font approach
 % These are options that don't matter to this document!
 % \usepackage[partial=upright,nabla=upright]{unicode-math}
 % Note that none of the 4 styles available in unicode-math adhere to APA! french
@@ -34,18 +33,17 @@
 % Note that in XeTeX, expansion is disabled, and so some line breaks get screwed
 % up (and you need to manually include hyphens or similar)
 \usepackage{microtype}
-% DJC - I'm doing all kinds of fussing around to get decent math type setting
-% Oh fussiness! The below is an alternative way to use microtype (that didn’t
-% work properly for me)
-% \newfontfeature{Microtype}{protrusion=default;expansion=default;}
+\DisableLigatures{family = tt*}
 
 % This keeps things like `` and --- working
 \defaultfontfeatures{Ligatures=TeX}
 % NB: Numbers=OldStyle can only be used on the regular Pagella font
 % The Microtype option for set*font is redundant with the microtype package
-\setmainfont{TeX Gyre Pagella}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{TeX Gyre Cursor}
+\setmainfont{TeX Gyre Pagella} % One of few fonts with OpenType math
+\setsansfont{TeX Gyre Heros} % Seems OK
+\setmonofont{Inconsolata} % Skinny and easy on the eyes, wanted Menlo, but it
+                          % don't work!
+% \setmonofont{TeX Gyre Cursor} % This font sucks
 \setmathfont{TG Pagella Math}
 
 % Page layout. The fancyhdr package may complain about the need for a
@@ -71,8 +69,8 @@
 % Bibliography stuff:
 % DJC - I'm now using biblatex and bilatex-apa
 % This is 1i18n overkill, including i18n of quotes
-% Also - folks seem to think polyglossia is better now (only works in XeTeX, not
-% LuaTeX)
+% Also - folks seem to think polyglossia is better now (but it only works in
+% XeTeX, not LuaTeX in TeX Live 2012)
 \usepackage[american]{babel}
 \usepackage{csquotes}
 
@@ -90,7 +88,7 @@
 \usepackage[pdfborder={0 0 0},pdfusetitle]{hyperref}
 % This was the original hyperref inclusion with color
 % \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
-\usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
+% \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
 \usepackage{graphicx}
 
 % It strikes me as not worth checking into this given its age
@@ -116,10 +114,11 @@
 \usepackage{booktabs}
 
 \usepackage{pdfpages}
+% PITA, I suspect I will prefer minted
+% \usepackage{listings}
 
-% May also need to use this if we decide to have some huge tables:
-% But make sure we load things in the right order!
-% \usepackage{longtable}
+% Need this to reproduce Michael's underlining in the 400 words
+% \usepackage[normalem]{ulem}
 
 \begin{document}
 \ssp % single spacing
@@ -151,13 +150,18 @@ support of my grandma (even if she doesn't fully accept climate change).
 \listoftables % optional
 
 % If using code.sty, can also add:
-%% \listofcodes
-%% \addcontentsline{toc}{chapter}{List of Code Examples}
+% \listofcodes
+% \addcontentsline{toc}{chapter}{List of Code Examples}
+% Or we could use listings
+% \lstlistoflistings
 
 \begin{acknowledgements}
 Thanks for all the help!
 
-% Shout out to Larry Goldfarb.
+% Shout out to Larry Goldfarb.  My first conversation with Tom Wickens - I was
+% still a punk kid at age 29.  Thank Rich (Taoist Immortal - I have never failed
+% more profoundly than during my years in his lab, and I thank him for that
+% learning experience) and Michael, problems may have been structural.
 
 This dissertation was based on the
 \href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}} template.
@@ -195,6 +199,7 @@ Department of Education, or the University of California.
 \include{appendices/survey-items/survey-items}
 \include{appendices/400words/400words}
 \include{appendices/coding/coding}
+\include{appendices/imputation/imputation}
 % \include{appendices/NDI-intervention/NDI-intervention}
 % \include{appendices/numbers/numbers}
 
