@@ -65,7 +65,7 @@ cleans += thesis.pdf setup.aux
 toplevels += thesis.pdf
 
 thesis.pdf: thesis.tex $(deps) $(bibdeps)
-	lualatex -synctex=1 --file-line-error thesis
+	lualatex -synctex=1 --file-line-error --shell-escape thesis
 
 # Note - the below are relying on config in latexmkrc (also in this dir)
 latexmk: thesis.tex $(deps)

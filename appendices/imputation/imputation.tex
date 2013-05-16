@@ -13,7 +13,7 @@ compute this test for Study 1 in Chapter~\ref{chap:mechanism}:
 
 % If you have time and energy, it might be nice to type-set this better
 % Also - looks like we can have about 78 characters like this, but that’s tight
-\begin{verbatim}
+\begin{minted}{r}
 # Here, dfs is pre-populated with the measured values. We assign the mean of
 # the sandwich (s) group scores to the pre-test scores for the no-pretest
 # group (n). We then append the sandwich group scores unmodified.
@@ -30,4 +30,4 @@ imputed.df <- rbind(imputed.df,
 
 with(imputed.df,
      t.test(pre.gw, total.gw, alternative='less', paired=TRUE) )
-\end{verbatim}
+\end{minted}
