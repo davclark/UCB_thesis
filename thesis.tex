@@ -84,11 +84,6 @@
 
 % Other setup:
 
-% Note: with BibLaTeX, you should load hyperref after the biblatex package.
-\usepackage[pdfborder={0 0 0},pdfusetitle]{hyperref}
-% This was the original hyperref inclusion with color
-% \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
-% \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
 \usepackage{graphicx}
 
 % It strikes me as not worth checking into this given its age
@@ -120,6 +115,13 @@
 
 % Need this to reproduce Michael's underlining in the 400 words
 % \usepackage[normalem]{ulem}
+
+% Note: with BibLaTeX, you should load hyperref after the biblatex package. And
+% according to the WikiBook - it should be loaded close to last.
+\usepackage[pdfborder={0 0 0},pdfusetitle]{hyperref}
+% This was the original hyperref inclusion with color
+% \usepackage[colorlinks,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfusetitle]{hyperref}
+% \usepackage{pdflscape} % allows landscape-oriented figures with PDF page rotation
 
 \begin{document}
 \ssp % single spacing
