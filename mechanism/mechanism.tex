@@ -718,8 +718,8 @@ are in Figure~\ref{causal-mechanism}.
     \label{fig:causal-mechanism}
 \end{figure}
 
-In addition, we note that there is scant difference between our sandwich and no
-pre-test groups in terms of post-test attitudes (with differences going in
+In addition, we may note that there is scant difference between our sandwich and
+no pre-test groups in terms of post-test attitudes (with differences going in
 opposite directions across our two groups). Thus, it seems unlikely that a
 pre-test incurs a greater burden of experimental demand over the core
 intervention (400 words followed by a post-test). Moreover, in some populations,
@@ -733,39 +733,56 @@ work that followed, we standardized on using a sandwich style intervention.
 Given the replicated demonstrations of significant attitude changes described
 above, we proceeded to assess whether the mechanism-explanation effects we had
 obtained were durable rather than transient. This study extended prior work by
-delaying the post-test several days. We also wondered whether an ``experimental
-demand'' from the classroom setting might have driven our prior results, so we
-provided the intervention on-line; that is, we assessed whether our materials
-would elicit significant attitude change even though students participated via
-their own computers, without experimenter observation. Thus we concurrently
-explored the longevity (via delay) and format (online) aspects of our
-phenomenon. We also extended our prompts to incorporate more demographic and
-introspection queries.
+employing a followup test several days after our post-test. We also wondered
+whether any ``experimental demand'' from the classroom setting might have driven
+our prior results, so we provided the intervention on-line; that is, we assessed
+whether our materials would elicit significant attitude change even though
+students participated via their own computers, without experimenter observation.
+Thus we concurrently explored the longevity (via delayed followup) and format
+(online) aspects of our phenomenon. We also extended our prompts to incorporate
+more demographic and introspection queries.
 
 \subsection{Methods}
 
-The survey and instructional materials were those reported in Ranney et al.
-(2012a \& 2012b; the latter includes the full 400-word text of our
-intervention). The primary difference was that administration was conducted
-entirely online, via the Qualtrics Inc. (Provo, UT) system. Eight items were
-added to pre- and post-test attitude surveys to add reliability to the related
-RTMD metrics (specifically, national and religious affinities; these metrics
-will be reported elsewhere). Five further questions were introduced immediately
-following the instructional material to elicit introspection (about
-embarrassment, disagreement, etc.).  
+The survey and instructional materials were largely analogous to those reported
+in Section~\ref{sec:mech-classroom}. The primary difference was that
+administration was conducted entirely online, via the Qualtrics Inc. (Provo, UT)
+system. Eight items were added to pre- and post-test attitude surveys to add
+reliability to the related RTMD metrics (specifically national and religious
+affinities; these metrics will be reported elsewhere). The \textsf{engage} item
+was added to provide a clearer assessment of behavioral intentions. Five further
+questions were introduced immediately following the instructional material to
+elicit introspection (about embarrassment, disagreement, etc.). These questions
+were distilled from the result of guided interviews with participants in a pilot
+study quite similar to this one, but carried out with participants using a
+computer in our lab testing space.
 
-Undergraduates (N=80) were recruited via the Research Participation Program
+As we have now collected 3 observations of the same measure within subjects, for
+many of the tests in this study, we shifted from using $t$-tests to using robust
+mixed-effects regression (\textsf{lmer} from the \textsf{lme4} package in R),
+with Tukey-style simultaneous comparisons for our \emph{a priori} contrasts
+(\textsf{glht} from the \textsf{lme4} R package).
+
+\subsubsection{Participants}
+
+Undergraduates ($N=80$) were recruited via the Research Participation Program
 (RPP), administered by the University of California, Berkeley (UCB) psychology
-department. Such recruitment allowed us to administer a pre-test to about half
-of the students (38) between 8 and 26 days ($\mu=18.5$ days) before any of the
-80 participated in the study, which may have allayed test-retest effects
-(although Ranney et al., 2012a, found little evidence for them). Thus, as with
-Ranney et al. (2012a), some participants received the full survey testing
-``sandwich'' while others had no pre-test. A delayed post-test was given to all
-participants between 1 and 8 days later ($\mu=4$ days). This range was used to
-assess the timecourse of retention in planning subsequent studies, We lack the
-power to test forgetting over time here (though numerically, did not observe
-any!).
+department. 
+
+\subsubsection{Procedure}
+
+As noted above, all participation was on-line via the participants own computer
+(or a computer they otherwise had access to). RPP recruitment allowed us to
+administer a pre-test to about half of the students ($n=38$) between 8 and 26
+days ($\mu=18.5$ days) before any of the 80 participated in the study, which may
+have allayed test-retest effects (although we found little evidence for them in
+the experiments reported above).  Thus, as with the above, some participants
+received the full survey testing ``sandwich'' while others had no pre-test. A
+delayed followup post-test was given to all participants between 1 and 8 days
+later ($\mu=4$ days). This followup test had the same format as the immediate
+post-test. This range of delays prior to followup was used to assess the
+timecourse of retention in planning subsequent studies, We lack the power to
+test forgetting over time here (though numerically, did not observe any!).
 
 \subsection{Results} 
 
@@ -776,7 +793,6 @@ attitude data (though this was unchanged for the CogSci paper).
 In general and as anticipated, we replicated Ranney et al.’s (2012a) results and
 extended them by finding that shifts were retained over the mean (four-day)
 delay. 
-% Include more verbiage here explaining lme4, Anova and glht
 Scored knowledge was comparable to previously tested UC students, rising from
 3.8 on pre-test to 6.5 post-test and 6.3 on followup (gains from pre-test were
 significant at $p<0.0001$ for both subsequent scores). GW belief ratings (with
