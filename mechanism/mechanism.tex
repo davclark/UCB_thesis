@@ -424,7 +424,8 @@ Figure~\ref{fig:class-predicting-gw.pdf}.
         beliefs and attitudes. This data was only available for participants who
     took the pre-test (i.e., the “sandwich” group). A significant relationship
     obtains for the Berkeley students ($p < 0.01$), while there is very little
-    relationship in the Brownsville population.}
+    relationship in the Brownsville population. Note that no (significant)
+    prediction of attitudes was possible based on scored knowledge.}
     \label{fig:class-predicting-gw}
 \end{figure}
 
@@ -841,6 +842,50 @@ Table~\ref{table:mech-rpp-party-affiliations}.
 \end{tabular}
 \end{table}
 
+A final demographic measure of interest is conservativism. Given the large
+number of students who completed the RPP pre-test survey, we were able to
+selectively contact those that we identified as the most conservative of the
+300+ students who took the pre-test. The RPP survey is standardized and shared
+with all experimenters. In this case, the RPP survey includes 2 questions for
+economic and social conservativism, while our survey only includes a question
+for “conservativism.” A full treatment of the relationship between these
+variables is not justified here. Briefly, social conservativism is quite
+healthily correlated with our later measure of non-specific conservativism ($r =
+0.84$; economic conservativism was correlated at 0.68). The addition of economic
+conservativism as a second predictor or as a way to generate a mean
+conservativism score on the pre-test \emph{does} increase goodness of fit, but
+the reductions in error are small. Moreover, the Bayesian Information Criterion
+(BIC) weighs heavily in favor of a model using only social conservativism.
+However we slice things, though, participants reported higher values for
+non-specific conservativism after the intervention as compared to economic
+\emph{or} social conservativism on the RPP pre-test, as shown in
+Table~\ref{table:mech-rpp-cons}. Certainly, there is no evidence here that folks
+have moved in a less conservative direction! It does seem that recruitment of
+conservatives may have been somewhat successful, based on the 0.5-point higher
+score for participants who did the RPP pre-test (and were thus the subject of
+targeted conservative recruitment).
+
+\begin{table}
+    \caption{Conservativism scores from the RPP pre-test and intervention
+        post-test. Note that scores are not directly comparable, as the
+        differing levels of specificity entailed somewhat different wording on
+        the questions. That said, individuals were certainly close to the middle
+        of the scale, and if anything moved closer to the middle on average}
+    \label{table:mech-rpp-cons}
+\centering
+\begin{tabular}{rccc}
+  \toprule
+   & \multicolumn{3}{c}{Reported conservativism} \\
+   & Social (pre-test) & Economic (pre-test) & Non-specific (post-test) \\ 
+  \midrule
+  Full Sandwich & 3.86 & 3.25 & 4.31 \\
+  No (RPP) pre-test & & & 3.80 \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+
+
 \subsubsection{Procedure}
 
 As noted above, all participation was on-line via the participants own computer
@@ -886,6 +931,48 @@ delayed post-test (5.2, $t(79)=6.2$, $p<0.001$). (The immediate increase in
 self-rated knowledge, in fact, replicates results from the ``sandwich''
 interventions in Ranney et al., 2012a, though those results were not reported.)
 
+\subsubsection{Surprise}
+
+As explained in the Methods, some participants recieved a full “Sandwich”
+intervention, including beliefs and attitudes administered during RPP
+pre-screening. All participants, however, completed a knowledge pre-test. Thus,
+we were able to informally compare these two partially novel conditions with our
+previous profiles for reported surprise (i.e., with
+Figure~\ref{fig:uc-mech-surprise}). The surprise results from our current
+conditions are provided in Figure~\ref{fig:rpp-mech-surprise}, and provide
+further support for the centrality of the initial \emph{knowledge} pre-test.
+
+\begin{figure}
+    \centering
+    \includegraphics{RPP-mech-surprise-by-group.pdf}
+    \caption{Surprise ratings for individuals in Study 2. Note that there is
+        very little difference between subjects that had recently taken the
+        knowledge and attitude pre-test or not. Moreover, these distributions
+        are analagous to “sandwich” participants in previous studies. Thus, it
+        seems to matter little if and when participants recieve the beliefs and
+        attitutdes surveys---the higher surprise values appear to be linked to
+        asking participants to “put their cards on the table” with a knowledge
+        pre-test.}
+    \label{fig:rpp-mech-surprise}
+\end{figure}
+
+In addition to repeating the surprise question from Study 1, on the basis of
+informal interviews, we had included another related question asking if people
+were “surprised or embarrassed about their own lack of knowledge.” This item
+does seem to have elicited somewhat higher scores, with a mean of 3.6 vs. 2.9
+for the original surprise question. The distributions for these responses are
+shown in Figure~\ref{fig:rpp-mech-embarrass}.
+
+\begin{figure}
+    \centering
+    \includegraphics{RPP-mech-embarrass-by-group.pdf}
+    \caption{Ratings of embarrassment or surprise at lack of knowledge for
+        individuals in Study 2. Distributions are again not obviously different
+        between groups. However, there appears to be less of a floor effect than
+        we obtain with our original phrasing of surprise.}
+    \label{fig:rpp-mech-embarrass}
+\end{figure}
+
 \subsubsection{Micro-analysis of GW ratings}
 
 Table~\ref{table:uc-online-gw-means} reports the mean rating across participants
@@ -928,6 +1015,14 @@ Expectation of engagement, dishearteningly, clocks in at a 0.05 \emph{drop}!
 Scored knowledge and self-rated knowledge are significantly correlated pre-test,
 so participants have decent meta-cognition here.
 % TODO: insert statistics from Retention notebook in RPP_Su2012
+However, unlike with our Berkeley students in Study 1, there was only a
+marginally significant (and smaller) correlation between na\"ive pre-test
+self-rated knowledge and GW attitudes ($r(34)=0.27$, $p=0.11$). Thus, while the
+metacognitive aspect of self-rated knowledge appears robust across Berkeley
+student populations, the relationship with GW attitudes is weak, or perhaps even
+spurious.
+
+
 
 \subsection{Discussion}
 
@@ -941,11 +1036,30 @@ given our results, we recommend the online distribution of mechanistic
 explanations, especially about climate change.  
 
 
+\begin{longtabu}{X[2.5]S[table-parse-only]X[l]}
 
+\caption{Results from Study 2.}\\ 
+\toprule
+Result & {$p$-value} & Statistic \\ \midrule
+\endfirsthead
+
+% The empty option prevents a TOC entry from being generated
+\caption[]{Results from Study 2, continued.}\\
+\toprule
+Result & {$p$-value} & Statistic \\ \midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+Insert results here!	&		&	 	\\
+
+\end{longtabu}
 % New results not in CogSci paper yet
 
 \section{Study 3: A web-based intervention on Amazon Mechanical Turk}
 
+\subsection{Methods}
 \subsection{Notes to integrate}
 
 A number of additional concerns arise at this point. People may try to take the
@@ -954,6 +1068,10 @@ U.S. residents so that they may gain the credit), and (bizarrely, as this does
 not reduce time required, or increase payment) they may copy and paste from
 online sources. Myles (so far) has identified line 14 on his sheet as a problem
 in this regard.
+
+\subsection{Results}
+
+\subsection{Discussion}
 
 \section{Summary and Conclusions}
 
