@@ -198,7 +198,7 @@ asses na\"ive knowledge and attitudes in the general public.
 % phenomena. The "basic pieces" of our mechanism do indeed seem new to most, but
 % we have yet to formally test that part.
 
-\subsection{Experimental Methods}
+\subsection{Methods}
 
 The general form of the intervention is given in Figure~\ref{fig:mech-flow}, and
 was collected anonymously.  Participants were split into two groups, receiving
@@ -908,28 +908,108 @@ post-test. This range of delays prior to followup was used to assess the
 timecourse of retention in planning subsequent studies, We lack the power to
 test forgetting over time here (though numerically, did not observe any!).
 
+Statistics were largely performed in R, with data pre-processing in python.
+ANOVAs utilizing type-II sums of squares were conducted using the \textsf{lmer}
+function from the \textsf{lme4} package (which handles a variety of unbalanced
+designs), followed with \textsf{Anova} from the \textsf{car} package.
+Simultaneous Tukey-style linear comparisons wer performed using the
+\textsf{glht} function from the \textsf{multcomp} package. Unless otherwise
+stated, all tests were \emph{a priori}.
+
 \subsection{Results} 
 
-Note results have changed a bit for Knowledge (both kinds) using
-regression and glht. Should also do something more definitive with the GW
-attitude data (though this was unchanged for the CogSci paper).
+A full report of statistical tests for this study is given at the end of this
+section in Table~\ref{table:RPP-mech-results}.
+    
+\subsubsection{Learning the Global Warming Mechanism}
 
 In general and as anticipated, we replicated Ranney et al.’s (2012a) results and
 extended them by finding that shifts were retained over the mean (four-day)
-delay. 
-Scored knowledge was comparable to previously tested UC students, rising from
-3.8 on pre-test to 6.5 post-test and 6.3 on followup (gains from pre-test were
-significant at $p<0.0001$ for both subsequent scores). GW belief ratings (with
-higher ratings being more in concert with science’s consensus) increased from a
-6.20 pre-test mean to a 6.54 post-test mean ($t(79)=2.5$, $p=0.006$; a healthy
-improvement on our 1--9 Likert scales!). Some of this improvement diminished over
-the following days, but most was retained: the mean score on the delayed
-post-test was 6.44 ($t(79)=1.7$, $p=0.05$). Self-rated knowledge means increased
-markedly from pre- to post-test (4.5 to 5.6 on a 9-point scale, $t(79)=8.5$,
-$p<0.001$). Retention of this increase, gratifyingly, was also noted on the
-delayed post-test (5.2, $t(79)=6.2$, $p<0.001$). (The immediate increase in
-self-rated knowledge, in fact, replicates results from the ``sandwich''
-interventions in Ranney et al., 2012a, though those results were not reported.)
+delay.  Scored knowledge was comparable to previously tested UC students, rising
+from 3.8 on pre-test to 6.5 post-test and 6.3 on delayed test (gains from pre-test
+were significant at $p<0.0001$ for both subsequent scores). These are plotted in
+Figure~\ref{fig:RPP-mech-scored}. 
+
+\begin{figure}
+    \centering
+    \includegraphics{RPP-mech-scored.pdf}
+    \caption{Scored knowledge before and after our intervention. Faint lines
+        represent individual performance, while the strong line is a LOESS
+        robust, smooth regression line. Note that the pre-test here was
+        immediately prior to instruction. Participants overwhelmingly increased
+        their scored knowledge following the intervention. While this study was
+        not designed to assess forgetting in an individual over time, it is
+        interesting to note that earlier respondents tended to be scored lower
+        than later respondents. Most importantly, it is easy to spot individuals
+        who improved or worsened over the delay.}
+\end{figure}
+
+Self-rated knowledge means also increased markedly from pre- to post-test (4.5
+to 5.6 on a 9-point scale, $t(79)=8.5$, $p<0.001$). Retention of this increase,
+gratifyingly, was also noted on the delayed post-test (5.2, $t(79)=6.2$,
+$p<0.001$). (The immediate increase in self-rated knowledge, in fact, replicates
+results from the ``sandwich'' interventions in Ranney et al., 2012a, though
+those results were not reported.)
+
+\begin{figure}
+    \centering
+    \includegraphics{RPP-mech-self.pdf}
+    \caption{Self-rated knowledge before and after our intervention. Note that the
+        pre-test here was immediately prior to instruction.}
+\end{figure}
+
+\subsubsection{Global Warming Acceptance Via Mechanistic Learning}
+
+GW belief ratings (with higher ratings being more in concert with science’s
+consensus) increased from a 6.20 pre-test mean to a 6.54 post-test mean
+($t(79)=2.5$, $p=0.006$; a healthy improvement on our 1--9 Likert scales!). Some
+of this improvement diminished over the following days, but most was retained:
+the mean score on the delayed post-test was 6.44 ($t(79)=1.7$, $p=0.05$). 
+
+A more recent analysis, however, implies that these results may not be so clear.
+In particular, using the \textsf{lmer} package yeilded insignificant
+improvements even from pre- to post-test. Upon closer inspection, the breakdown
+for GW attitudes is quite different across sandwich and no pre-test groups, as
+seen in Table~\ref{table:RPP-mech-gw-breakdown}. Unlike in previous studies,
+the Sandwich group contained a good number of participants who were recruited
+for their conservativism (and there is a clear group difference on this
+measure). Thus, we are not as justified in assuming the pre-test is
+representative of \emph{all} participants.
+
+
+% latex table generated in R 2.15.1 by xtable 1.7-1 package
+% Fri May 24 16:15:32 2013
+\begin{table}[ht]
+\centering
+\caption{Mean GW ratings for Sandwich and No-pretest groups. Note that the
+    increase from pre-test to post-test is only 0.16 for individuals in the
+    Sandwich group, and delayed test results are lower than where they started.
+    The No pre-test group, however, starts much higher and stays higher.
+\begin{tabular}{rccc}
+  \toprule
+ & pre & pst & fol \\ 
+  \midrule
+  No (RPP) pre-test & NA & 6.68 & 6.65 \\ 
+  Full Sandwich & 6.20 & 6.36 & 6.18 \\ 
+   \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics{RPP-mech-GW.pdf}
+    \caption{Reported global warming (GW) beliefs and attitudes before and after
+        our intervention. Note that the pre-test here was administered on
+        average 18.5 days prior to instruction as a part of UC Berkeley's
+        undergraduate participant pool (RPP) pre-screening. The fact that over
+        half of our participants are missing pre-test data pulls the initial
+        value of our regressor up markedly from the true pre-test mean of 6.2.
+        We can also notice here that all of the lowest-rating individuals took
+        the delayed test quite early. We should certainly be taking those
+        initial dips with a grain of salt. We cannot assume that's an actual
+        retention timecourse!}
+\end{figure}
+
 
 \subsubsection{Surprise}
 
@@ -1035,10 +1115,16 @@ interventions often scale well, enhance reliability, and prove cost-effective;
 given our results, we recommend the online distribution of mechanistic
 explanations, especially about climate change.  
 
+Followup tests occurred over a range of
+delays, and retention here was used in determining intervals for future studies.
+Given the almost total lack of mean forgetting over the observed interval, we
+would start our subsequent study's delayed test after a delay of a full week.
+
+
 
 \begin{longtabu}{X[2.5]S[table-parse-only]X[l]}
 
-\caption{Results from Study 2.}\\ 
+\caption{Results from Study 2.\label{table:RPP-mech-results}}\\ 
 \toprule
 Result & {$p$-value} & Statistic \\ \midrule
 \endfirsthead
@@ -1052,24 +1138,35 @@ Result & {$p$-value} & Statistic \\ \midrule
 \bottomrule
 \endfoot
 
-Insert results here!	&		&	 	\\
+Scored knowledge is different across tests in a repeated-measures Anova. &
+2.2e-16 & $\chi^2(2)=128.39$  \\
+Scored knowledge is higher in post-test than in pre-test. & 5e-3 & $z=10.09$ \\
+Scored knowledge is higher in delayed test than in pre-test. & 5e-3 & $z=9.52$ \\
+Self-rated knowledge is different across tests in a repeated-measures Anova. &
+2.2e-16 & $\chi^2(2)=110.25$ \\
+Self-rated knowledge is higher in post-test than in pre-test. & 1e-5 & $z=10.47$ \\
+Self-rated knowledge is higher in the delayed test than in pre-test. & 1e-5 &
+$z=5.922$ \\
+Self-rated knowledge is lower in the delayed test than in the post-test. &
+1.5e-5 & $z=-4.55$ \\
 
 \end{longtabu}
 % New results not in CogSci paper yet
 
-\section{Study 3: A web-based intervention on Amazon Mechanical Turk}
+\section{Study 3: An intervention on Amazon Mechanical Turk}
 
 \subsection{Methods}
-\subsection{Notes to integrate}
 
 A number of additional concerns arise at this point. People may try to take the
 survey again, they may lie about their demographics (i.e., claiming they are
 U.S. residents so that they may gain the credit), and (bizarrely, as this does
 not reduce time required, or increase payment) they may copy and paste from
-online sources. Myles (so far) has identified line 14 on his sheet as a problem
-in this regard.
+online sources.
 
 \subsection{Results}
+
+Myles (so far) has identified line 14 on his sheet as a problem
+in this regard.
 
 \subsection{Discussion}
 
