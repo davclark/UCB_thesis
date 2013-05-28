@@ -744,6 +744,7 @@ Thus we concurrently explored the longevity (via delayed followup) and format
 more demographic and introspection queries.
 
 \subsection{Methods}
+\label{sec:mech-online-methods}
 
 The survey and instructional materials were largely analogous to those reported
 in Section~\ref{sec:mech-classroom}. The primary difference was that
@@ -976,6 +977,9 @@ for their conservativism (and there is a clear group difference on this
 measure). Thus, we are not as justified in assuming the pre-test is
 representative of \emph{all} participants.
 
+BUT we have over 300 folks from RPP. So, we should be able to address this at
+least partially that way. Throw everyone into one big model?
+
 
 % latex table generated in R 2.15.1 by xtable 1.7-1 package
 % Fri May 24 16:15:32 2013
@@ -984,7 +988,8 @@ representative of \emph{all} participants.
 \caption{Mean GW ratings for Sandwich and No-pretest groups. Note that the
     increase from pre-test to post-test is only 0.16 for individuals in the
     Sandwich group, and delayed test results are lower than where they started.
-    The No pre-test group, however, starts much higher and stays higher.
+    The No pre-test group, however, starts much higher and stays higher.}
+\label{table:RPP-mech-gw-breakdown}
 \begin{tabular}{rccc}
   \toprule
  & pre & pst & fol \\ 
@@ -1157,16 +1162,40 @@ Self-rated knowledge is lower in the delayed test than in the post-test. &
 
 \subsection{Methods}
 
-A number of additional concerns arise at this point. People may try to take the
-survey again, they may lie about their demographics (i.e., claiming they are
-U.S. residents so that they may gain the credit), and (bizarrely, as this does
-not reduce time required, or increase payment) they may copy and paste from
-online sources.
+Experimental methods in this study were nearly identical to Study 2, above
+(detailed in Section~\ref{sec:mech-online-methods}). The primary difference here
+was that participants were recruited via Amazon's Mechanical Turk. The use of an
+anonymous, on-line labor pool raises a number of additional concerns about data
+quality. For example, people may try to take the survey again, they may lie
+about their demographics (i.e., claiming they are U.S. residents so that they
+may gain the credit), and (bizarrely, as this does not reduce time required, or
+increase payment) they may copy and paste from online sources.
+
+Re-taking is one of the most easily guarded against concerns on Amazon
+Mechanical Turk, as Amazon will attempt to enforce this if requested, as was
+done in this study. However, in addition, no IP addresses were repeated in the
+participant group for this study.
+
+Verification of location is fairly straightforward using “geo IP” databases. In
+this case, geographical locations were retrieved from the freely available
+\textcite{maxmind-database}. On the primary survey, participants indicated the
+state they were in. Participant IP addresses from both intervention and followup
+surveys were subsequently checked against this reported location. Here, two
+individuals IP’s appeared to be located in India and Turkey, and thus these
+participants were excluded. Most other participants had IP addresses that
+resolved to the state they claimed to be from. One participant’s IP address was
+not listed in the MaxMind database, and was traced to Hughes Net, a U.S.-only
+satellite internet provider.
+
+Checking for plagiarism is a well-trod topic in academia today, though there is
+no one clear approach. For the purposes of this survey, we relied on a
+combination of coder judgement, and automated checking using Google’s Custom
+Search API.
 
 \subsection{Results}
 
 Myles (so far) has identified line 14 on his sheet as a problem
-in this regard.
+in this regard. This was row 74 from the coding sheet.
 
 \subsection{Discussion}
 
