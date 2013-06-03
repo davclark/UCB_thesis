@@ -924,7 +924,7 @@ section in Table~\ref{table:RPP-mech-results}.
     
 \subsubsection{Learning the Global Warming Mechanism}
 
-In general and as anticipated, we replicated Ranney et al.’s (2012a) results and
+In general and as anticipated, we replicated results from Study 1 and
 extended them by finding that shifts were retained over the mean (four-day)
 delay.  Scored knowledge was comparable to previously tested UC students, rising
 from 3.8 on pre-test to 6.5 post-test and 6.3 on delayed test (gains from pre-test
@@ -948,15 +948,16 @@ Figure~\ref{fig:RPP-mech-scored}.
 Self-rated knowledge means also increased markedly from pre- to post-test (4.5
 to 5.6 on a 9-point scale, $t(79)=8.5$, $p<0.001$). Retention of this increase,
 gratifyingly, was also noted on the delayed post-test (5.2, $t(79)=6.2$,
-$p<0.001$). (The immediate increase in self-rated knowledge, in fact, replicates
-results from the ``sandwich'' interventions in Ranney et al., 2012a, though
-those results were not reported.)
+$p<0.001$). The immediate increase in self-rated knowledge, replicates
+results from the ``sandwich'' interventions in Study 1. Scores are shown in
+Figure~\ref{fig:RPP-mech-self}.
 
 \begin{figure}
     \centering
     \includegraphics{RPP-mech-self.pdf}
     \caption{Self-rated knowledge before and after our intervention. Note that the
         pre-test here was immediately prior to instruction.}
+    \label{fig:RPP-mech-self}
 \end{figure}
 
 \subsubsection{Global Warming Acceptance Via Mechanistic Learning}
@@ -975,7 +976,8 @@ seen in Table~\ref{table:RPP-mech-gw-breakdown}. Unlike in previous studies,
 the Sandwich group contained a good number of participants who were recruited
 for their conservativism (and there is a clear group difference on this
 measure). Thus, we are not as justified in assuming the pre-test is
-representative of \emph{all} participants.
+representative of \emph{all} participants. Individual scores are depicted in
+Figure~\ref{fig:RPP-mech-GW}.
 
 BUT we have over 300 folks from RPP. So, we should be able to address this at
 least partially that way. Throw everyone into one big model?
@@ -1013,6 +1015,7 @@ least partially that way. Throw everyone into one big model?
         the delayed test quite early. We should certainly be taking those
         initial dips with a grain of salt. We cannot assume that's an actual
         retention timecourse!}
+    \label{fig:RPP-mech-GW}
 \end{figure}
 
 
@@ -1074,26 +1077,25 @@ Expectation of engagement, dishearteningly, clocks in at a 0.05 \emph{drop}!
 
 % latex table generated in R 2.15.1 by xtable 1.7-1 package
 % Thu May  9 12:43:59 2013
-\begin{table}[h]
-\caption{Mean GW ratings, online with UC undergrads} 
+\begin{table}
+\caption{Mean GW ratings, online with UC undergrads. For means, please refer to
+         Table~\ref{table:RPP-mech-gw-breakdown}} 
 \label{table:uc-online-gw-means}
 \centering
 \begin{tabular}{>{\sffamily}rccc}
   \toprule
  & Pre-test & Post-test & Delayed test \\ 
   \midrule
-  gw1\_2 & 6.61 & 6.86 & 6.36 \\ 
-  gw2\_1 & 5.19 & 5.31 & 5.25 \\ 
-  gw2\_2 & 6.61 & 6.81 & 6.67 \\ 
-  gw2\_3 & 5.81 & 5.97 & 5.97 \\ 
-  gw2\_4 & 6.78 & 6.86 & 6.67 \\ 
+  gw1_2 & 6.61 & 6.86 & 6.36 \\ 
+  gw2_1 & 5.19 & 5.31 & 5.25 \\ 
+  gw2_2 & 6.61 & 6.81 & 6.67 \\ 
+  gw2_3 & 5.81 & 5.97 & 5.97 \\ 
+  gw2_4 & 6.78 & 6.86 & 6.67 \\ 
   engage & 5.91 & 5.86 & 6.11 \\ 
   lifesty & 4.83 & 5.11 & 4.94 \\ 
   \bottomrule
 \end{tabular}
 \end{table}
-
-
 
 \subsubsection{Correlations}
 
@@ -1106,8 +1108,6 @@ self-rated knowledge and GW attitudes ($r(34)=0.27$, $p=0.11$). Thus, while the
 metacognitive aspect of self-rated knowledge appears robust across Berkeley
 student populations, the relationship with GW attitudes is weak, or perhaps even
 spurious.
-
-
 
 \subsection{Discussion}
 
@@ -1125,11 +1125,9 @@ delays, and retention here was used in determining intervals for future studies.
 Given the almost total lack of mean forgetting over the observed interval, we
 would start our subsequent study's delayed test after a delay of a full week.
 
-
-
 \begin{longtabu}{X[2.5]S[table-parse-only]X[l]}
 
-\caption{Results from Study 2.\label{table:RPP-mech-results}}\\ 
+\caption{Summary of results from Study 2.\label{table:RPP-mech-results}}\\ 
 \toprule
 Result & {$p$-value} & Statistic \\ \midrule
 \endfirsthead
@@ -1156,7 +1154,6 @@ Self-rated knowledge is lower in the delayed test than in the post-test. &
 1.5e-5 & $z=-4.55$ \\
 
 \end{longtabu}
-% New results not in CogSci paper yet
 
 \section{Study 3: An intervention on Amazon Mechanical Turk}
 
@@ -1164,12 +1161,20 @@ Self-rated knowledge is lower in the delayed test than in the post-test. &
 
 Experimental methods in this study were nearly identical to Study 2, above
 (detailed in Section~\ref{sec:mech-online-methods}). The primary difference here
-was that participants were recruited via Amazon's Mechanical Turk. The use of an
-anonymous, on-line labor pool raises a number of additional concerns about data
-quality. For example, people may try to take the survey again, they may lie
-about their demographics (i.e., claiming they are U.S. residents so that they
-may gain the credit), and (bizarrely, as this does not reduce time required, or
-increase payment) they may copy and paste from online sources.
+was that participants were recruited via Amazon's Mechanical Turk (discussed
+further in Section~\ref{sec:mturk-problems}. In general, the remainder of the
+methods focuses only on the differences with those reported in
+Section~\ref{sec:mech-online-methods}.
+
+\subsubsection{Data quality on Amazon Mechanical Turk}
+\label{sec:mturk-problems}
+
+The use of an anonymous, on-line labor pool raises a number of additional
+concerns about data quality. For example, people may try to take the survey
+again, they may lie about their demographics (i.e., claiming they are U.S.
+residents so that they may gain the credit), and (bizarrely, as this does not
+reduce time required, or increase payment) they may copy and paste from online
+sources.
 
 Re-taking is one of the most easily guarded against concerns on Amazon
 Mechanical Turk, as Amazon will attempt to enforce this if requested, as was
@@ -1200,28 +1205,210 @@ copied and pasted materials from the internet. These could have both been
 identified by the unusual presence of extended unicode characters in the text of
 their answers, as well as the presence of newlines.
 
+Note that one individual was \emph{both} foreign \emph{and} copied text directly
+form the web. Thus, we exclude only 3 subjects total.
+
 While survey consistency seemed reasonable for all remaining participants, it
 did highlight two individuals who answered almost exclusively 1 or 9 to all
-items. These individuals were left in analyses, as they still provided
-information on their beliefs. 
+items. These individuals were retained in the analyses below, as they still
+provided information on their beliefs. 
 
 % I did the survey consistency checks in another notebook, and don’t think it’s
 % worth reporting on that here. All Ss were retained. I also checked using
 % excel’s conditional formatting that no participants simply answered the same
 % thing all the way through. 
 
+\subsubsection{Participants}
+
+“Workers” on the Amazon Mechanical Turk platform ($N=41$) were recruited to
+complete a two-part survey. Approximately 75\% of these individuals ($n=30$)
+completed the delayed test. After removal of problematic participants above, we
+were left with 38 participants in the primary intervention, with 28 in the
+followup. 17 of the total retained participants were female. Two of our
+participants report as being born outside the United States, but residing here
+for at least 22 years. Stated party affiliations are listed in
+Table~\ref{table:cco-mech-party}. Mean conservativism was 3.9. Compared with our
+college students above, conservativism was in the same ballpark and participants
+were far more likely to declare Democrat or Republican than
+with our college students above. While the sample is still clearly biased
+towards the Democratic / liberal end of the political spectrum, the ratio
+between Republicans and Democrats is far less extreme than previous samples. 
+
+% latex table generated in R 2.15.1 by xtable 1.7-1 package
+% Sun Jun  2 14:31:37 2013
+\begin{table}[ht]
+    \caption{Stated party affiliations for participants in Study 3 (via
+        Mechanical Turk).}
+    \label{table:cco-mech-party}
+\centering
+\begin{tabular}{rcc}
+  \toprule
+ Party & Number (percentage) \\ 
+  \midrule
+  democrat     & 22 (58\%) \\ 
+  republican   & 8 (21\%) \\ 
+  independent  & 6 (16\%) \\ 
+  none         & 1 (3\%) \\ 
+  other        & 1 (3\%) \\ 
+  \midrule
+  total        & 38.00 (100\%) \\ 
+   \bottomrule
+\end{tabular}
+\end{table}
+
+A final interesting feature of our population is that all participants reporting
+their faith as Christian self-identified as Catholic. That is, we had no
+“protestant” participants.
+
+\subsubsection{Procedure}
+
+The only categorical difference in procedure between this and Study 2 is the
+utilization of Mechanical Turk. A minor change is that the retention interval
+was extended to begin 4 days later, with the longest interval being 10.8 days
+($\mu=5.5$ days). A reminder was sent throught the Mechanical Turk bonus system,
+where participants were paid 5 cents along with a message that the delayed test
+was open for completion. The majority of payment was provided at the time of
+completion of the delayed test. Perhaps unsurprisingly, most participants
+responded shortly after the first reminder, and the majority of the remainder
+responded shortly after the final reminder.
+
 \subsection{Results}
+
+Overall, we replicate our central results from above. As before, full statistics
+are reported in a table at the end of this section. Only information directly
+supporting the narrative is included in the textual exposition.
 
 \subsubsection{Problems and Data Quality}
 
 While the text of the followup survey was like the pre-test (i.e., the first
-question made no affordance for “if you would add anything”) many folks still put
-“nothing to add” for all three questions. These individuals were retained as, if
-anything, they should weaken followup retention effects. Moreover, they still
-answered the likert survey questions. 
+question made no affordance for “if you would add anything”) three individuals
+still put “nothing to add” for all three questions. These individuals were
+retained as, if anything, they should weaken followup retention effects.
+Moreover, they all still answered the likert survey questions. 
 % TODO give precise number
 
+\subsubsection{Learning and Global Warming Mechanism}
+
+Again, we replicated the above results by 
+finding that shifts were retained over the mean 5.5-day
+delay.  Scored knowledge was comparable to previously tested students, rising
+from 1.9 on pre-test to 4.8 post-test and 3.9 on delayed test (gains from pre-test
+were significant at $p<0.002$ for both subsequent scores). These are plotted in
+Figure~\ref{fig:CCO-mech-scored}. 
+
+\begin{figure}
+    \centering
+    \includegraphics{CCO-mech-scored.pdf}
+    \caption{Scored knowledge before and after our intervention. Faint lines
+        represent individual performance, while the strong line is a LOESS
+        robust, smooth regression line. Participants overwhelmingly increased
+        their scored knowledge following the intervention. As before, this study was
+        not designed to assess forgetting in an individual over time, but it is
+        interesting to note that we again obtain relatively high scores later in
+        our delayed testing.}
+    \label{fig:CCO-mech-scored}
+\end{figure}
+
+Self-rated knowledge means also increased markedly from pre- to post-test (4.2
+to 4.7 on a 9-point scale, $p<0.01$). Retention of this increase, however,
+failed to exceed our significance threshold (4.5, $p=0.21$). These scores are
+reported in Figure~\ref{fig:CCO-mech-self}. It seems not unlikely, given our
+previous results, that more subjects would yield a significant difference here.
+Even so, it should be noted that studies with college students tended to yield
+increases of over a point on self-rated knowledge (at least with “sandwich”
+interventions such as this one). Thus, even our significant pre- to post-test
+gains are relatively small.
+
+\begin{figure}
+    \centering
+    \includegraphics{CCO-mech-self.pdf}
+    \caption{Self-rated knowledge before and after our intervention. Note that the
+        pre-test here was immediately prior to instruction.}
+    \label{fig:CCO-mech-self}
+\end{figure}
+
+\subsubsection{Global Warming Acceptance Via Mechanistic Learning}
+
+Happily, while introspection regarding knowledge seemed to yeild somewhat
+smaller gains than in Studies 1 and 2, GW belief ratings increased significantly
+from a 6.34 pre-test mean to a 6.64 post-test mean ($p=0.001$). Some of this
+improvement diminished over the following days, but most was retained: the mean
+score on the delayed post-test was 6.58 ($p=0.006$). Note that these values are
+very much in line with those obtained in the previous studies. Individual
+attitude breakdowns are reported in Table~\ref{table:CCO-mech-gw-means}.
+Individual data are depicted in Figure~\ref{fig:CCO-mech-GW}.
+
+% latex table generated in R 2.15.1 by xtable 1.7-1 package
+% Fri May 31 18:42:37 2013
+\begin{table}
+\caption{Mean GW ratings for the Mechanical Turk mechanism intervention. Note
+    that means are only computed over the items with codes starting with
+    “\textsf{gw}”.}
+\label{table:CCO-mech-gw-means}
+\centering
+\begin{tabular}{>{\sffamily}rccc}
+  \toprule
+         & Pre-test & Post-test & Delayed test \\ 
+  \midrule
+  gw1_2 & 6.87 & 7.34 & 7.07 \\ 
+  gw2_1 & 6.03 & 6.55 & 6.25 \\ 
+  gw2_2 & 6.82 & 7.05 & 7.04 \\ 
+  gw2_3 & 6.05 & 6.42 & 6.36 \\ 
+  gw2_4 & 6.89 & 7.05 & 6.86 \\ 
+  engage & 6.37 & 6.42 & 6.46 \\ 
+  lifsty & 5.37 & 5.63 & 6.04 \\ 
+  \midrule
+  mean & 6.34 & 6.64 & 6.58 \\
+   \bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics{CCO-mech-GW.pdf}
+    \caption{Reported global warming (GW) beliefs and attitudes before and after
+        our intervention on Mechanical Turk.}
+    \label{fig:CCO-mech-GW}
+\end{figure}
+
+
+\subsubsection{Surprise}
+
+Give both regular and “embarrassment” as in Study 2.
+
+\subsubsection{Correlations}
+
+Look again at self-rated knowledge?
+
 \subsection{Discussion}
+
+This study provides an evaluation of our Global Warming mechanism intervention
+in a much more true-to-life scenario. Specifically, we should be concerned with
+evaluating a population that is representative of individuals that might engage
+with our materials were they to be made generally available on line. The
+participants we obtained here on Mechanical Turk are likely much closer to this
+ideal than our college students above.
+
+\begin{longtabu}{X[2.5]S[table-parse-only]X[l]}
+
+\caption{Summary of results from Study 2.\label{table:RPP-mech-results}}\\ 
+\toprule
+Result & {$p$-value} & Statistic \\ \midrule
+\endfirsthead
+
+% The empty option prevents a TOC entry from being generated
+\caption[]{Results from Study 2, continued.}\\
+\toprule
+Result & {$p$-value} & Statistic \\ \midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+Some result &
+0.1e-106 & $\chi^2(2)=0$  \\
+
+\end{longtabu}
 
 \section{Summary and Conclusions}
 
@@ -1245,6 +1432,11 @@ For that, we will need to examine some connection to behavior. This is the
 clearest lack in the current research. Such an endeavor will be even more
 challenging than the above, but it is of such critical importance! 
 
+Overall, however, we have seen evidence that materials such as those exhibited
+in Appendix~\ref{app:400words} are likely to be effective both in college
+classrooms as well as on-line. Evidence from related studies has provided
+additional support for effective application in high school classrooms.
+
 %TODO - things we can really address with the followup data:
 
 % Look at the relationship between folks saying they learned / were surprised /
@@ -1255,7 +1447,7 @@ challenging than the above, but it is of such critical importance!
 \section*{Acknowledgements}
 
 The work reported in this chapter has been previously published, in part, in
-\textcite{ranney_improving_2012_f,ranney_changing_2012}, and
+\textcite{ranney_changing_2012,ranney_improving_2012_f}, and
 \textcite{clark_knowledge_inpress}.  All such material is re-used here with the
 permission of my co-authors, the publishers, and the Graduate Division at the
 University of California, Berkeley.
