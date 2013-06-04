@@ -200,16 +200,19 @@ asses na\"ive knowledge and attitudes in the general public.
 
 \subsection{Methods}
 
+\subsubsection{Materials and Procedure}
+
 The general form of the intervention is given in Figure~\ref{fig:mech-flow}, and
 was collected anonymously.  Participants were split into two groups, receiving
 either the “no-pretest” version of the intervention, or the full “sandwich”
-(filled with nourishing descriptions of climate change!). The climate change
-knowledge portion of the pre- and post-tests consisted of the three questions
-described in Section~\ref{sec:materials}. For this experiment, the likert items
-(all on a 1-9 scale) consisted only of \textsf{knwgbl} followed by the first 13
-items in Table~\ref{table:rtmd-questions}. Both groups read the educational text
-regarding the mechanism of greenhouse gasses (reproduced in full in
-Appendix~\ref{app:400words}), and indicated any surprise they may have
+(filled with nourishing descriptions of climate change!). 
+
+The climate change knowledge portion of the pre- and post-tests consisted of the
+three questions described in Section~\ref{sec:materials}. For this experiment,
+the likert items (all on a 1-9 scale) consisted only of \textsf{knwgbl} followed
+by the first 13 items in Table~\ref{table:rtmd-questions}. Both groups read the
+educational text regarding the mechanism of greenhouse gasses (reproduced in
+full in Appendix~\ref{app:400words}), and indicated any surprise they may have
 experienced (again, on a 1-9 scale). The “kinds of light” check consisted of two
 fill-in-the-blank questions regarding the kinds of light coming to earth from
 the sun and radiating away. Here, “sunlight” or “visible light” were considered
@@ -226,6 +229,13 @@ were asked to provide some feedback on the intervention, and also on Al Gore’s
 “An Inconvenient Truth” (if they had seen it). These responses were used to
 refine our methods going forward, and \textcite{bem-future} notwithstanding,
 should have had no effect on the results.
+
+Participants were run simultaneously for each of the two classes. Instructions
+were administered by the course instructor, and students received one of two
+packets---placing them into one of the two groups described above. After
+completing the consent form on the front of the packet, individuals proceeded to
+read and answer questions. The entire experiment required approximately
+25 minutes to complete.
 
 \subsubsection{Participants}
 
@@ -273,13 +283,6 @@ affiliation is reported in Table~\ref{table:study1-affiliation}.
 \end{table}
 
 \subsubsection{Procedure}
-
-Participants were run simultaneously for each of the two classes. Instructions
-were administered by the course instructor, and students received one of two
-packets---placing them into one of the two groups described above. After
-completing the consent form on the front of the packet, individuals proceeded to
-read and answer questions. The entire experiment required approximately
-25 minutes to complete.
 
 \subsubsection{Analysis}
 
@@ -746,6 +749,8 @@ more demographic and introspection queries.
 \subsection{Methods}
 \label{sec:mech-online-methods}
 
+\subsubsection{Materials and Procedure}
+
 The survey and instructional materials were largely analogous to those reported
 in Section~\ref{sec:mech-classroom}. The primary difference was that
 administration was conducted entirely online, via the Qualtrics Inc. (Provo, UT)
@@ -759,11 +764,24 @@ were distilled from the result of guided interviews with participants in a pilot
 study quite similar to this one, but carried out with participants using a
 computer in our lab testing space.
 
-As we have now collected 3 observations of the same measure within subjects, for
-many of the tests in this study, we shifted from using $t$-tests to using robust
-mixed-effects regression (\textsf{lmer} from the \textsf{lme4} package in R),
-with Tukey-style simultaneous comparisons for our \emph{a priori} contrasts
-(\textsf{glht} from the \textsf{lme4} R package).
+RPP recruitment allowed us to administer a pre-test to about half of the
+students ($n=36$, one was removed due to technical problems) between 8 and 26
+days ($\mu=18.5$ days) before any of the 80 participated in the study, which may
+have allayed test-retest effects (although we found little evidence for them in
+the experiments reported above).  Thus, as with the above, some participants
+received the full survey testing ``sandwich'' while others lacked the
+demographics and attitude portion of the pre-test. Note that this differs from
+previous “no-pretest” groups, in that this group still provided their naïve
+description of the mechanism of global warming). Also note that demographics
+were \emph{also} collected following the primary intervention, as we did not
+have them for all participants. Thus, for some participants, we collected
+some demographic information twice (some of which is reported on below).
+% Note - pre-test here was ClarkSu2012_ClimateCognition_RPP_pre
+A delayed post-test was given to all participants between 1 and 8 days later
+($\mu=4$ days). This followup test had the same format as the immediate
+post-test. This range of delays prior to followup was used to assess the
+timecourse of retention in planning subsequent studies. We lack the power to
+test forgetting over time here, and numerically we did not observe any.
 
 \subsubsection{Participants}
 
@@ -885,42 +903,23 @@ targeted conservative recruitment).
 \end{tabular}
 \end{table}
 
+\subsubsection{Analysis}
 
-
-\subsubsection{Procedure}
-
-As noted above, all participation was on-line via the participants own computer
-(or a computer they otherwise had access to). RPP recruitment allowed us to
-administer a pre-test to about half of the students ($n=36$, one was removed due
-to technical problems) between 8 and 26 days ($\mu=18.5$ days) before any of the
-80 participated in the study, which may have allayed test-retest effects
-(although we found little evidence for them in the experiments reported above).
-Thus, as with the above, some participants received the full survey testing
-``sandwich'' while others lacked the demographics and attitude portion of the
-pre-test (note that this differs from previous “no-pretest” groups, in that this
-group still provided their na\"ive description of the mechanism of global
-warming). Also note that demographics were \emph{also} collected following the
-primary intervention. Thus, for some participants, we collected certain
-demographic information twice (some of which is reported on above).
-% Note - pre-test here was ClarkSu2012_ClimateCognition_RPP_pre
-A delayed post-test was given to all participants between 1 and 8 days later
-($\mu=4$ days). This followup test had the same format as the immediate
-post-test. This range of delays prior to followup was used to assess the
-timecourse of retention in planning subsequent studies, We lack the power to
-test forgetting over time here (though numerically, did not observe any!).
-
-Statistics were largely performed in R, with data pre-processing in python.
-ANOVAs utilizing type-II sums of squares were conducted using the \textsf{lmer}
-function from the \textsf{lme4} package (which handles a variety of unbalanced
-designs), followed with \textsf{Anova} from the \textsf{car} package.
-Simultaneous Tukey-style linear comparisons wer performed using the
-\textsf{glht} function from the \textsf{multcomp} package. Unless otherwise
-stated, all tests were \emph{a priori}.
+As we have now collected 3 observations of the same measure within subjects, for
+many of the tests in this study, we shifted from using $t$-tests to using robust
+mixed-effects regression. For this, we used the \textsf{lmer} function from the
+\textsf{lme4} package in R, which handles a variety of unbalanced designs.
+Goodness of fit for these regression models was assessed utilizing type-II
+sums of squares via the \textsf{Anova} function from the \textsf{car} package.
+Once a null model was rejected, Tukey-style contrasts were computed as
+simultaneous comparisons with \textsf{glht} from the \textsf{multcomp} package.
+Unless otherwise stated, all tests were \emph{a priori}.
 
 \subsection{Results} 
 
-A full report of statistical tests for this study is given at the end of this
-section in Table~\ref{table:RPP-mech-results}.
+As before, a full report of statistical tests for this study is given at the end of this
+section in Table~\ref{table:RPP-mech-results}. Statistics are provided in-text
+when appropriate.
     
 \subsubsection{Learning the Global Warming Mechanism}
 
@@ -943,6 +942,7 @@ Figure~\ref{fig:RPP-mech-scored}.
         interesting to note that earlier respondents tended to be scored lower
         than later respondents. Most importantly, it is easy to spot individuals
         who improved or worsened over the delay.}
+    \label{fig:RPP-mech-scored}
 \end{figure}
 
 Self-rated knowledge means also increased markedly from pre- to post-test (4.5
@@ -1152,6 +1152,11 @@ Self-rated knowledge is higher in the delayed test than in pre-test. & 1e-5 &
 $z=5.922$ \\
 Self-rated knowledge is lower in the delayed test than in the post-test. &
 1.5e-5 & $z=-4.55$ \\
+GW Attitudes (multiple tests). \\
+Self-rated knowledge is significantely correlated with scored knowledge on the
+pre-test. & 4.7e-6 & $r(76)=0.49$ \\
+Self-rated knowledge is \emph{not} significantly correlated with GW attitudes on
+the pre-test. & 0.11 & $r(34)=0.27$ \\
 
 \end{longtabu}
 
@@ -1165,6 +1170,31 @@ was that participants were recruited via Amazon's Mechanical Turk (discussed
 further in Section~\ref{sec:mturk-problems}. In general, the remainder of the
 methods focuses only on the differences with those reported in
 Section~\ref{sec:mech-online-methods}.
+
+\subsubsection{Materials and Procedure}
+
+On the basis of our previous two studies, the most convenient design that still
+elicits the highest surprise was an immediate pre-test including all
+measures---eliciting descriptions prior to instruction maximized surprise, and
+the timing of other attitudinal measures seemed to have little effect (or may
+have actually reduced our power to observe shifts in attitudes). Thus, here, all
+participants completed a pre-test immediately prior to the main intervention and
+post-test, most closely approximating the sandwich intervention from Study 1
+with the addition of a delayed test some days later.
+
+The most interesting difference in procedure between this and Study 2 is the
+utilization of Mechanical Turk. A minor change is that the retention interval
+was extended to begin 4 days later, with the longest interval being 10.8 days
+($\mu=5.5$ days). A reminder was sent throught the Mechanical Turk bonus system,
+where participants were paid 5 cents along with a message that the delayed test
+was open for completion. The majority of payment was provided at the time of
+completion of the delayed test. Perhaps unsurprisingly, most participants
+responded shortly after the first reminder, and the majority of the remainder
+responded shortly after the final reminder.
+
+Materials were identical, apart from the addition of a question requesting the
+individual's “worker ID”---a unique identifier used to track and pay
+individuals, akin to a social security number assigned by Amazon.
 
 \subsubsection{Data quality on Amazon Mechanical Turk}
 \label{sec:mturk-problems}
@@ -1260,17 +1290,8 @@ A final interesting feature of our population is that all participants reporting
 their faith as Christian self-identified as Catholic. That is, we had no
 “protestant” participants.
 
-\subsubsection{Procedure}
-
-The only categorical difference in procedure between this and Study 2 is the
-utilization of Mechanical Turk. A minor change is that the retention interval
-was extended to begin 4 days later, with the longest interval being 10.8 days
-($\mu=5.5$ days). A reminder was sent throught the Mechanical Turk bonus system,
-where participants were paid 5 cents along with a message that the delayed test
-was open for completion. The majority of payment was provided at the time of
-completion of the delayed test. Perhaps unsurprisingly, most participants
-responded shortly after the first reminder, and the majority of the remainder
-responded shortly after the final reminder.
+% Analysis - exactly the same as before. Doesn't seem to warrant inclusion, but
+% it might be nice to have the link to the section above.
 
 \subsection{Results}
 
@@ -1284,7 +1305,9 @@ While the text of the followup survey was like the pre-test (i.e., the first
 question made no affordance for “if you would add anything”) three individuals
 still put “nothing to add” for all three questions. These individuals were
 retained as, if anything, they should weaken followup retention effects.
-Moreover, they all still answered the likert survey questions. 
+Moreover, they all still answered the likert survey questions. While not
+definitive, this is certainly one clue that individuals recruited via Mechanical
+Turk are perhaps rushing a bit more than our previous college samples.
 % TODO give precise number
 
 \subsubsection{Learning and Global Warming Mechanism}
@@ -1374,11 +1397,26 @@ Individual data are depicted in Figure~\ref{fig:CCO-mech-GW}.
 
 \subsubsection{Surprise}
 
-Give both regular and “embarrassment” as in Study 2.
+As in Study 2, individuals ranked their embarrassment or surprise at their own
+lack of knowledge higher than straight surprise. Mean values were 2.9 and 4.1
+respectively, quite comparable to Study 2. Distributions for both questions are
+depicted in Figure~\ref{fig:CCO-mech-surprise}). 
+
+\begin{figure}
+    \centering
+    \includegraphics{CCO-mech-surprise-by-question.pdf}
+    \caption{Surprise and “embarassment” ratings for individuals in Study 3.}
+    \label{fig:CCO-mech-surprise}
+\end{figure}
 
 \subsubsection{Correlations}
 
-Look again at self-rated knowledge?
+As with our UC students, participants demonstrated a significant correlation
+between self-rated knowledge and actual knowledge ($r(36)=0.49$).  And, as in
+Study 2, we again failed to replicate a significant relationship between
+self-rated knowledge and GW attitudes on the pre-test. Given these repeated
+failrures to replicate, it seems prudent to abandon the naïve relationship
+between self-rated knowledge and GW attitudes (at least in this general sense).
 
 \subsection{Discussion}
 
@@ -1405,8 +1443,32 @@ Result & {$p$-value} & Statistic \\ \midrule
 \bottomrule
 \endfoot
 
-Some result &
-0.1e-106 & $\chi^2(2)=0$  \\
+Scored knowledge is different across tests in a repeated-measures Anova. &
+2.7e-8 & $\chi^2(2)=34.87$  \\
+% Divided by two, a priori one-tailed
+Scored knowledge is higher in post-test than in pre-test. & 
+5e-5 & $z=-5.86$ \\
+Scored knowledge is higher in delayed test than in pre-test. & 
+0.0014 & $z=3.30$ \\
+Self-rated knowledge is different across tests in a repeated-measures Anova. &
+0.21 & $\chi^2(2)=7.69$ \\
+Self-rated knowledge is higher in post-test than in pre-test. & 
+0.01 & $z=2.72$ \\
+Self-rated knowledge is \emph{not} significantly higher in the delayed test than in
+pre-test. & 
+0.21 & $z=1.69$ \\
+Mean GW attitude is different across tests in a repeated-measures Anova. &
+0.00091 & $\chi^2(2)=14.01$ \\
+Mean GW attitude is higher in post-test than in pre-test. & 
+0.00085 & $z=3.445$ \\
+Mean GW attitude is higher in delayed test than in pre-test. & 
+0.0062 & $z=2.84$ \\
+Self-rated knowledge is significantely correlated with scored knowledge at
+pre-test. & 
+0.0017 & $r(36)=0.49$ \\
+Self-rated knowledge is \emph{not} significantly correlated with GW attitudes at
+pre-test. & 
+0.32 & $r(36)=0.16$ \\
 
 \end{longtabu}
 

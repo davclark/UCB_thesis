@@ -19,9 +19,9 @@
 % Note that if you use unicode-math, you need to do it after amsmath (and
 % prehaps other ams things, and certainly mathtools)
 
-% This is one approach to doing maths with the modern opentype font approach
 % These are options that don't matter to this document!
 % \usepackage[partial=upright,nabla=upright]{unicode-math}
+
 % Note that none of the 4 styles available in unicode-math adhere to APA! french
 % is closest / easiest, as only upright latin characters are wrong (they should
 % be italicised, but they are not). Can use \mathit
@@ -37,12 +37,15 @@
 
 % This keeps things like `` and --- working
 \defaultfontfeatures{Ligatures=TeX}
+
+% All below are freely available fonts, and are likely included with your TeX
+% distro
+
 % NB: Numbers=OldStyle can only be used on the regular Pagella font
 % The Microtype option for set*font is redundant with the microtype package
 \setmainfont{TeX Gyre Pagella} % One of few fonts with OpenType math
 \setsansfont{TeX Gyre Heros} % Seems OK
-\setmonofont{Inconsolata} % Skinny and easy on the eyes, wanted Menlo, but it
-                          % don't work!
+\setmonofont{Inconsolata} % Skinny and easy on the eyes
 % \setmonofont{TeX Gyre Cursor} % This font sucks
 \setmathfont{TG Pagella Math}
 
@@ -145,7 +148,7 @@ My work is awesome. Give me a Ph.D.
 With love and respect for all that is good---in particular the unwavering
 support of my grandma (even if she doesn't fully accept climate change \emph{or}
 evolution).
-\end{center}}
+\end{center} }
 \null\vfil
 \end{dedication}
 
@@ -172,12 +175,13 @@ Thanks for all the help!
 This dissertation was based on the
 \href{https://github.com/pkgw/ucastrothesis}{\textsf{ucastrothesis}} template.
 It was typeset with \hologo{LuaLaTeX} using fonts from the \TeX\ Gyre project
-(primarily Pagella). The research reported here was supported in part by the
-Institute of Education Sciences pre-doctoral training grant R305B090026 to the
-University of California, Berkeley and the University of California, Berkeley
-Committee on Research. The opinions expressed are those of the author and do not
-necessarily represent views of the Institute of Education Sciences, the U.S.
-Department of Education, or the University of California.
+(Pagella for main text and Heros for sans serif) and Inconsolata for monospaced
+text. The research reported here was supported in part by the Institute of
+Education Sciences pre-doctoral training grant R305B090026 to the University of
+California, Berkeley and the University of California, Berkeley Committee on
+Research. The opinions expressed are those of the author and do not necessarily
+represent views of the Institute of Education Sciences, the U.S.  Department of
+Education, or the University of California.
 
 % Something about Amazon, Mechanical Turk, and whatever other trademarks I use
 % in the document.
