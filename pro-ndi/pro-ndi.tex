@@ -167,6 +167,29 @@ study even more than in the above study, the inclusion of information about
 authority was scant (e.g., the more accessible phrase “journal article” replaced
 phrases such as “article published in PNAS”).
 
+\subsubsection{Data quality on Amazon Mechanical Turk}
+\label{sec:mturk-problems}
+
+The use of an anonymous, on-line labor pool raises concerns about data quality.
+For example, people may try to take the survey again or they may lie about their
+demographics (i.e., claiming they are U.S. residents so that they may gain the
+credit). Re-taking is one of the most easily guarded against concerns on Amazon
+Mechanical Turk, as Amazon will attempt to enforce this if requested, as was
+done in this study. However, in addition, no IP addresses were repeated in the
+participant group for this study.
+
+Amazon will attempt to restrict individuals to the U.S. if requested, and this
+was done for this experiment. An additional layer of verification of location is
+straightforward using “geo IP” databases. In this case, geographical locations
+were retrieved from the freely available \textcite{maxmind-database}. On our
+survey, participants indicated the state they reside in. Participant IP
+addresses were subsequently checked against this reported location. Here, two
+individuals IP’s appeared to be located in Germany and Guatemala, and thus these
+participants were excluded. Most other participants had IP addresses that
+resolved to the state they claimed to be from. One participant’s IP address was
+not listed in the MaxMind database, and was traced to either Hughes Net or
+Bright Home, both U.S.-only satellite internet providers.
+
 \subsection{Results}
 
 Numbers were again ranked as surprising.
@@ -190,6 +213,14 @@ Numbers were again ranked as surprising.
         Turk intervention with climate-change-supporting numbers.}
     \label{fig:prondi-knw}
 \end{figure}
+
+\subsubsection{No observed effect of political variables}
+
+% TODO
+With this sample, we are able to examine the effects of
+conservativism or political party. Figure XXX shows attitudes broken out by
+Republican, Democrat (and Other).
+
 \subsection{Discussion}
 
 As compared with Study 1, the primary change was an increase in the fluency of
