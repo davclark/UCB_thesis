@@ -166,14 +166,24 @@ terms of making the survey more clear was replacing a fill-in-the-blank question
 for specifying units and “increase” or “decrease” for their estimate. In this
 version of the experiment, one or two choices including the unit and direction
 were provided as appropriate to each estimate. For example, “\% of researchers”
-or “feet increase.”
+or “feet increase.” The item reproduced in Appendix~\ref{app:format-ndi} is an
+exact copy of the format used for this study.  Note that participants were
+further asked to indicate their experience of an item on three different
+scales---one asking about “surprise,” one about “embarrassment at lack of
+knowledge,” and one about the novelty vs familiarity of the item.
 
 Note that in the process of streamlining instructions, I removed instructions to
 the effect that NO deceptions were used. This is in contrast to the previous
 (ineffective) study that did include such an instruction.  In addition, in this
 study even more than in the above study, the inclusion of information about
 authority was scant (e.g., the more accessible phrase “journal article” replaced
-phrases such as “article published in PNAS”).
+phrases such as “article published in PNAS”). The exact wording used in this
+study is shown in Appendix~\ref{app:numbers}.
+
+A final change was the removal of an item on sea-level rise which had previously
+been incorrectly reported as 10 times higher than the true amount. It is a small
+possibility that this item undermined individual's belief in our other numbers,
+but based on comments, only a few individuals appeared to doubt the number.
 
 \subsubsection{Data quality on Amazon Mechanical Turk}
 \label{sec:mturk-problems}
@@ -241,7 +251,56 @@ their faith as Christian self-identified as Catholic. That is, we had no
 
 \subsection{Results}
 
-Numbers were again ranked as surprising.
+\subsubsection{Surprise and related measures}
+
+Numbers were again ranked as surprising, and in a similar range to that observed
+in the above Study (which failed to shift attitudes). Here, we have a total of
+21 measures of something like surprise, 3 for each of our 7 estimation items.
+The number of potential relationships is large here, so we must be cautious in
+over-interpreting \emph{post hoc} observation. However, some clear strucutre
+appears to exist amongst these correlations, as can be seen in
+Figure~\ref{fig:CCO-prondi-surp-corr}. Specifically, based on the block
+structure near the diagonal for the “embarrassment” and familiarity ratings, it
+seems that individuals had a tendency to rate these items relatively low or high
+across items, while “surprise” provided a relatively item-pure measure. This can
+be summarized statistically with the averages of the off-diagonal correlations
+in these blocks. The surprise items had a mean correlation with each other of
+0.14, while the embarrassment and familiarity items had a mean of 0.41 and 0.40,
+respectively. Another clear structure can be seen in the smaller diagonals
+visible off the main diagonal. Where these diagonals appear, this indicates that
+for a given item, the relevant measures tended to covary. The mean of the
+correlations along these minor diagonals were as follows: surprised with
+embarrassed was 0.57, surprised with familiar was -0.31, and embarrassed with
+familiar was -0.09. Thus, embarrassment and familiarity do a poor job of
+predicting one another. Surprise, however, is well correlated with the
+embarrassment rating, and still reasonably correlated with familiarity.
+
+\begin{figure}
+    \centering
+    \includegraphics{CCO-prondi-surp-corr.pdf}
+    \caption{An image plot of the correlations between ratings for each of the 3
+        ratings across the 7 estimation items. Each rating type is presented in
+        a block (textual labels apply to items within the entire block).
+        Relatively clear block structure is apparent surrounding the main
+        diagonal for embarassment and familiarity (here, indicated by blue for
+        higher values). Parallel to the main diagonal, a blue / high correlation
+        diagonal of positive correlations can be seen within an item between
+        embarrassment and surprise, and a red / negative correlation diagonal
+        can be seen for surprise and familiarity.}
+    \label{fig:CCO-prondi-surp-corr}
+\end{figure}
+
+Across items, surprise ranged from 3.2 to 6.3, embarrassment from 2.6 to 4.3,
+and familiarity from 2.9 to 4.1. Some floor effects may have occurred for
+embarrassment and familiarity (the opposite of what we'll see in
+Chapter~\ref{chap:mechanism}}. The order of items was consistent across
+surprise and embarrassment (but not for familiarity). 
+
+Overall, it appears that our surprise question is the most pure assessment of
+student response to the item, and for these numbers, it suffers from less of a
+floor effect. That said, no combination of mean or maximum surprise (and
+related) scores were significantly predictive of shifts in GW belief and
+concern.
 
 \subsubsection{GW acceptance supported by clear numerical information}
 
