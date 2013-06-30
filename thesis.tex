@@ -1,8 +1,4 @@
 \documentclass[12pt]{myucthesis}
-% This enables, e.g., clicking in Skim's PDF view (on OSX) to open the relevant
-% source file in Vim
-% For some reason, luaTeX doesn't seem to like it, doing command line now
-% \synctex=1
 
 % \nofiles
 % The above command prevents latex from writing its auxiliary
@@ -23,7 +19,7 @@
 % \usepackage[partial=upright,nabla=upright]{unicode-math}
 
 % Note that none of the 4 styles available in unicode-math adhere to APA! french
-% is closest / easiest, as only upright latin characters are wrong (they should
+% is closest / easiest, as only upper-case latin characters are wrong (they should
 % be italicised, but they are not). Can use \mathit
 \usepackage[math-style=french]{unicode-math}
 % What can I say, I love the french
@@ -45,6 +41,7 @@
 % The Microtype option for set*font is redundant with the microtype package
 \setmainfont{TeX Gyre Pagella} % One of few fonts with OpenType math
 \setsansfont{TeX Gyre Heros} % Seems OK
+% \setsansfont{DejaVu Sans}
 \setmonofont{Inconsolata} % Skinny and easy on the eyes
 % \setmonofont{TeX Gyre Cursor} % This font sucks
 \setmathfont{TG Pagella Math}
@@ -88,9 +85,6 @@
 % Other setup:
 
 \usepackage{graphicx}
-
-% It strikes me as not worth checking into this given its age
-% \usepackage{mydeluxetable} % deluxetable customized to play well with ucthesis
 
 % DJC - my extra packages here
 % This is where warnings about the caption package come from
@@ -233,11 +227,11 @@ Education, or the University of California.
 \end{frontmatter}
 
 \include{intro/intro}
-\include{two-routes-estimation/two-routes-estimation}
+% \include{two-routes-estimation/two-routes-estimation}
 \include{survey-methods/survey-methods}
-\include{evil-ndi/evil-ndi}
-\include{pro-ndi/pro-ndi}
-\include{mechanism/mechanism}
+% \include{evil-ndi/evil-ndi}
+% \include{pro-ndi/pro-ndi}
+% \include{mechanism/mechanism}
 
 % These should get re-factored into proper chapters
 % \include{experimental-description/experimental-aims}
@@ -249,15 +243,15 @@ Education, or the University of California.
 
 \appendix
 
-\include{appendices/survey-items/survey-items}
-\include{appendices/undp/undp}
-\include{appendices/NDI-intervention/NDI-intervention}
-\include{appendices/numbers/numbers}
-\include{appendices/400words/400words}
-\include{appendices/detecting-plagiarism/detecting-plagiarism}
-\include{appendices/coding/coding}
-\include{appendices/kappa-extension/kappa-extension}
-\include{appendices/imputation/imputation}
+% \include{appendices/survey-items/survey-items}
+% \include{appendices/undp/undp}
+% \include{appendices/NDI-intervention/NDI-intervention}
+% \include{appendices/numbers/numbers}
+% \include{appendices/400words/400words}
+% \include{appendices/detecting-plagiarism/detecting-plagiarism}
+% \include{appendices/coding/coding}
+% \include{appendices/kappa-extension/kappa-extension}
+% \include{appendices/imputation/imputation}
 
 % \include{appendices/graphical-models/graphical-models}
 
