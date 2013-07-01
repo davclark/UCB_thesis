@@ -16,3 +16,4 @@
 /thesis.out
 /thesis.toc
 .DS_Store
+*.pyg
