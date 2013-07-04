@@ -427,7 +427,7 @@ $\:\overline{~~~~ \mbox{\rule{0in}{0.16in}\small ~\hspace{3.5in} Date }}\:$ \\
 {\fmfont
 {\@title}\par
 \vspace{1in}
-Copyright \@degreeyear\par
+© Copyright \@degreeyear\par
 by\par
 \@author}
 \end{center}
