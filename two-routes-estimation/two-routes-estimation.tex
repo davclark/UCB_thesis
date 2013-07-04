@@ -6,7 +6,7 @@
 As described in Section~\ref{sec:two}, cognition can occur in a relatively local
 or special-purpose manner, or alternatively in an integrated fashion that (among
 other things) affords volitional or conscious access. In
-\cite{clark_known_2010}, we provide some preliminary evidence and argumentation
+\textcite{clark_known_2010}, we provide some preliminary evidence and argumentation
 for separable learning processes which might be differentially involved when
 learning numerical information. Below, I present an overview of two experiments
 in abbreviated form, noting those details that are relevant to the questions
@@ -33,7 +33,7 @@ before, in addition to re-estimating (or potentially recalling) the value.
 The following experiment was designed to assess whether estimative improvement
 occurs even with respect to items for which no feedback was received---as was
 found in curricular NDI studies
-\cite[e.g.,][]{munnich_numerically-driven_2004,ranney_designing_2008}. The
+\parencite[e.g.,][]{munnich_numerically-driven_2004,ranney_designing_2008}. The
 experiment (1) addresses the effects of surprise and the timing of feedback on
 subsequent improvements in numerical estimation---as well as (2) probes whether
 these improvements are necessarily mediated by explicit recollection. A subset
@@ -50,7 +50,7 @@ two one-hour sessions over two consecutive days. Ages ranged from 18-56 years.
 
 \subsection{Materials}
 
-Numerical facts (106 of them) were selected from \citeauthor{ranney_designing_2008}
+Numerical facts (106 of them) were selected from \textcite{ranney_designing_2008}
 . An example is ``The current percentage of deaths in the U.S. that are
 caused by lung cancer.'' Three statistical facts were set aside for the basis of
 example items (namely US population, world population, and US Gross National
@@ -64,8 +64,8 @@ minimize possible confusions about the exact value of the number.
 
 \subsection{Procedure}
 
-Custom software utilizing Vision Egg \cite{straw_vision_2008} presented all materials and
-collected responses. (Source code available upon request,)  Descriptions of
+Custom software utilizing Vision Egg \parencite{straw_vision_2008} presented all materials and
+collected responses (source code available upon request). Descriptions of
 numerical facts were presented in 1-4 lines of text (with less than 55
 characters per line). A prompt for numeric entry was located below the
 description. Feedback concerning the veridical value was provided in a third
@@ -154,7 +154,7 @@ recognition or cued recall tasks used in many learning and memory studies. The
 closest point of comparison is likely the notion of \emph{source} memory, in
 which details surrounding the initial experience of the experimental item are
 well correlated with hippocampal activity at encoding
-\cite{davachi_multiple_2003}. In particular, we are \emph{not} asking
+\parencite{davachi_multiple_2003}. In particular, we are \emph{not} asking
 participants to attempt to recall a particular item from memory, Indeed, these
 memory ratings can be viewed as a form of metacognition regarding the estimation
 process and it's relationship to the participants previous experience with the
@@ -162,18 +162,18 @@ item (i.e., source memory for the item).
 
 \subsection{Analysis}
 
-We modeled improvement as a binomial outcome \cite[as
-did]{munnich_longevities_2005}. This allows for the treatment of items that have
+We modeled improvement as a binomial outcome \parencite[as
+did][]{munnich_longevities_2005}. This allows for the treatment of items that have
 differing distributions within a unified framework (e.g., a linear model would
 have difficulty modeling both percentages and values in the billions,
 particularly given our sample size).  Items were labeled as to whether estimates
 improved or not. These labels were fit with a binomial generalized linear model,
 using the lme4 package in the R statistical environment
-\cite{r_development_core_team_r:_2009_fixed}. This treatment allows for a full
+\parencite{r_development_core_team_r:_2009_fixed}. This treatment allows for a full
 multi-factorial mixed-effects analysis. Below, participants are always included
 as a random effect, and other factors are treated as fixed effects. Linear
 contrasts were evaluated using the multcomp package, which controls for
-family-wise error rate \cite{hothorn_simultaneous_2008}.
+family-wise error rate \parencite{hothorn_simultaneous_2008}.
 
 Unless otherwise noted, data were pre-processed to remove ties. This was done to
 allow for a null hypothesis that 50\% of the remaining items randomly improved
@@ -206,7 +206,7 @@ improvements were at least partially driven by general improvements in
 estimation skill, and this would have led to at least some modest improvements
 even without feedback on test items. Indeed, this kind of skill development was
 the successfully accomplished goal of various EPIC-based curricula
-\cite[e.g.,][]{munnich_numerically-driven_2004,ranney_designing_2008}. In this
+\parencite[e.g.,][]{munnich_numerically-driven_2004,ranney_designing_2008}. In this
 less extensive experimental manipulation, though, we understandably elicit no
 such skill improvements. Thus, we assume that these improvements are driven
 almost entirely by item-specific learning.
@@ -234,7 +234,7 @@ number of subjects (out of 12) contributing to that cell. Margins are
 appropriately weighted according to the number of items in each bin, and as such
 are not the simple mean of the row or column in the central table. Significant
 differences between levels of individual factors are marked with an asterisk.}
-\label{ei-table} 
+\label{fig:ei-table} 
 \end{figure}
 
 As the lack of feedback yielded non-significant changes in estimation accuracy,
@@ -253,7 +253,7 @@ of EI block items as surprising (``2'' or ``3'') vs. 59\% for E\_I (although no
 straightforward effect was observed with metacognition on memory).  This result
 mirrors the result obtained in the above study on climate change cognition, in
 which prior estimation increased participant reports of surprise
-\cite[cf.][]{rinne_estimation_2006}.  Thus, the
+\parencite[cf.][]{rinne_estimation_2006}.  Thus, the
 timing of feedback may have an effect on estimation improvement that is mediated
 by surprise; these issues seem best addressed in a subsequent study, though.
 Below, we only consider comparisons within surprise level and memory ratings
@@ -281,7 +281,21 @@ While both \emph{surprise} and \emph{metacognitive memory assessment} were
 predictive of improved estimation from the first to the second session, these
 measures did not interact significantly, and moreover were uncorrelated with one
 another (i.e., progressive darkening from the lower-left to upper-right corner
-in Fig.~\ref{ei-table}).
+in Fig.~\ref{fig:ei-table}). A graphical representation of this relationship is
+depicted in Figure~\ref{fig:causal-two}.
+
+% TODO: cut?
+
+\begin{figure}
+\begin{center}
+\includegraphics{causal1.pdf}
+\end{center}
+\caption{A graphical model representing the relationship between forms of
+    psychological processing of factual information observed in
+    chapter~\ref{chap:two}. Arrows represent conditional probability
+    relationships and \emph{not necessarily causation}.}
+\label{fig:causal-two}
+\end{figure}
 
 %% I have re-run correlations between surprise and metacognition using
 %% tetrachoric methods. Looking at the data though, it seems that I should
@@ -292,7 +306,7 @@ in Fig.~\ref{ei-table}).
 On it's own, this result would be insufficient to make strong claims about
 multiple cognitive routes for learning. But, this result fits well with an ever
 increasing literature (an overview of which was provided in
-section~\ref{sec:two}). 
+section~\ref{sec:two}).
 
 \subsection{Exclusions}
 
@@ -306,8 +320,8 @@ include E trials.
 \section{Discussion}
 
 Given the overall improvements in estimation ability evidenced in curricular
-studies by \citeauthor{munnich_numerically-driven_2004} and
-\citeauthor{ranney_designing_2008}, it is of interest that we see no statistically
+studies by \textcite{munnich_numerically-driven_2004} and
+\textcite{ranney_designing_2008}, it is of interest that we see no statistically
 significant improvement in items that didn't receive feedback (the ``E'' block).
 In other words, it appears that participants did not improve their estimation
 skills in the absence of feedback particular to a given item.
@@ -316,7 +330,7 @@ largely item-specific and related to the integration of feedback. This lack of
 improvement in the present experiment may be due to a lack of time for
 reflection or development of strategies––which were highlighted, taught, and
 fostered in the curricular studies.
-(\nptextcite{munnich_numerically-driven_2004,ranney_designing_2008} also focused, to
+(\cite{munnich_numerically-driven_2004,ranney_designing_2008} also focused, to
 a fair degree, on preferences and personalized policies which may engage a web
 of related concepts.)
 
@@ -327,7 +341,7 @@ perhaps the existence of learning even when participants claimed “no sense” 
 the numerical value provided at feedback---rather like a memorial analog to
 blindsight. This argues against the notion that improvements in estimation are
 simply the result of explicit episodic memory. The result is reminiscent of
-extant dual-process memory models.  For example, \citeauthor{davachi_multiple_2003}
+extant dual-process memory models.  For example, \textcite{davachi_multiple_2003}
 suggest that successful recognition could occur through a process of
 recollection and/or a sense of familiarity.  These processes moreover appear to
 be subserved by distinct sub-regions in the medial temporal lobe.  In the
@@ -335,7 +349,7 @@ present study, though, we see improvement in numerical estimation---which is
 perhaps most akin to a cued recall task for EI and E\_I items---without full
 recall of the number presented on the previous day.  Thus, the task here is
 perhaps more naturally expressed in the language of the remember/know
-distinction \citeauthor{knowlton_relationship_1998}.  That is, while participants
+distinction \parencite{knowlton_relationship_1998}.  That is, while participants
 appear not to remember a specific (usually multi-digit) number from the previous
 day, there is still a sense in which they know the number better than they knew
 it the day before.
@@ -349,7 +363,7 @@ and/or rapidly semanticized learning in support of these improvements. In
 particular, this appears to have something of a ``less conceptual'' flavor.
 This line of reasoning is reminiscent of studies of children applying abstract
 mathematical rules before they are aware of doing so
-\cite{siegler_unconscious_2000}.
+\parencite{siegler_unconscious_2000}.
 
 Of course there is also a clear role for explicit episodic recall in learning
 numerical information. In particular, how well participants believed they could
@@ -366,22 +380,10 @@ concise facts. Thus, our development of climate change interventions might
 usefully engage factors such as surprise and engagement with pre-existing
 knowledge to bolster more rote forms of learning.
 
-% This should be put in the appropriate place above
-
-\begin{figure}
-\begin{center}
-\includegraphics{causal1.pdf}
-\end{center}
-\caption{A graphical model representing the relationship between forms of
-    psychological processing of factual information observed in
-    chapter~\ref{chap:two}. Arrows represent conditional probability
-    relationships and \emph{not necessarily causation}.}
-\label{fig:causal-two}
-\end{figure}
-
 \section*{Acknowledgements}
 
 The work reported in this chapter has been previously published, in part, in
 \textcite{clark_known_2010}.  All such material is re-used here with the
 permission of my co-authors, the publishers, and the Graduate Division at the
-University of California, Berkeley.
+University of California, Berkeley. Thanks to Luke Miratrix for his input during
+the development of Figure~\ref{fig:ei-table}
