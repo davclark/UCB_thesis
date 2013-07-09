@@ -4,22 +4,50 @@
 \chapter{Extension to Cohen's \texorpdfstring{$\kappa$}{kappa} for multiple scores}
 \label{app:kappa}
 
-$\kappa$ is a commonly used measure of agreement developed by Cohen in which
-different raters each apply one of a number of scores to a set of responses
-(usually written text, such as collected in the studies in
-Chapter~\ref{chap:mechanism}).
-% TODO: Include standard formulation and reference.
+\textcite{cohen_coefficient_1960} describes a commonly used measure of
+inter-rater agreement, $\kappa$, in which different raters each
+apply one of a number of scores to a set of responses (usually written text,
+such as collected in the studies in Chapter~\ref{chap:mechanism}). Specificaly,
+$\kappa$ is defined as: \[ \kappa = {p_o - p_c \over 1 - p_c} \] Here, $p_o$ is
+observed probability (or fraction) of agreement, and $p_c$ is our expectation of
+chance agreement. Thus when
+$\kappa=1$, we have obtained perfect observed agreement ($p_o = 1$), and
+$\kappa \to 0$ as $p_o \to p_c$. Note that $\kappa$ can also become a large
+negative number when structural disagreement is present. 
+
+There are weighted and nonweighted variants of this measure. However, given the
+greater complexity of the weighted version and equivalence of results across
+weighted and nonweigted versions of $\kappa$, for simplicity's sake we will
+focus here on nonweighted $\kappa$. In this formulation, agreement occurs when
+both raters provide the same code. Thus, if there are two possible codes (“a”
+and “b”), there are four possibilities for two coders rating the same item.  Two
+such possibilities are agreement, thus $p_c = .5$. We would obtain $p_o$ by
+counting the fraction of occurrences of agreement out of the total number of
+rated items.
+
 Our texts recieve a number of codes, so we needed an extension to $\kappa$ that
-could capture such a scheme. We start from the idea that if both coders provide
-the same set of codes, they should be given a 1, or credit for full agreement.
+could capture such a scheme. In such a scheme, it is natural that if both coders
+provide the same set of codes, they are given a 1, or credit for full agreement.
 If they provide no common codes, they recieve a 0. Partial credit when both
 coders provide the same number of codes is equally simple. Consider the case
-where coders provide $N$ codes, $m$ of which are common. This item then recieves
-a score of $m/N$. In the case of an unequal number of codes, $N$ is set to the
-(potentially non-integer) average of the two numbers. Given these scores for
-each item, $\kappa$ is computed normally as the ratio between observed and
-chance agreement. 
-% TODO: Make this more correct.
+where coders provide $\mathit{N}$ codes, $m$ of which are common. This item then
+recieves a score of $m/\mathit{N}$. In the case of an unequal number of codes,
+$\mathit{N}$ is set to the (potentially non-integer) average of the two numbers.
+Given these scores for each item, $\kappa$ is computed normally as the ratio
+between observed and chance agreement. 
+
+Computationally, we construct a matrix of codes $C_i$ for each coder.
+Each row represents a particular participant response, with a “1” in the column
+corresponding to each of the assigned codes (“0” elsewhere). We can readily
+compute agreement ($m$) as the dot-product between the relevant rows. Given our
+usage of an unproven statistic, we will compute agreement between any random
+pairing of rows as well, deriving a “raw” measure of agreement: \[R = C_1C_2^T\]
+We then compute the mean number of codes for each pair of rows, and norm each
+cell by that number. We can freely sample from this normed matrix of agreements
+to obtain an empirical distribution for chance agreement given the structure of
+two random sets of codes. Actual observed agreement will be available along the
+diagonal (or “trace”) of this agreement matrix. This code, as with all code used
+in this dissertation, is available upon request.
 
 A note on using $\kappa$ in the text above: it seems completely admissable to
 continue to use $\kappa$ for the measure described above, given it's similarity

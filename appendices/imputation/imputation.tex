@@ -1,18 +1,18 @@
 \chapter{Using imputation to combine participants with and without a pre-test}
 \label{app:imputation}
 
-Imputation is a well-established approach to dealing with missing data (ref -
-probably Keppel and Wickens). In a number of the experiments in this
-dissertation, multiple groups received a similar intervention, but one group may
-have been missing a pre-test where we obtained their na\"ive baseline score
-(e.g., for a climate-relevant attitude). The approach we used in these cases was
-to use the participants for which we \emph{did} have a pre-test score (i.e., our
-sandwich group), and use the average of those as an approximation to our other
-groups pre-test score. To be explicit, following is the exact R code used to
-compute this test for Study 1 in Chapter~\ref{chap:mechanism}:
+Imputation is a well-established approach to dealing with missing data
+\parencite[for an overview see][Chapter 20]{fox_applied_2008}. In a number of
+the experiments in this dissertation, multiple groups received a similar
+intervention, but one group may have been missing a pre-test where we obtained
+their na\"ive baseline score (e.g., for a climate-relevant attitude). The
+approach we used in these cases was to use the participants for which we
+\emph{did} have a pre-test score (i.e., our sandwich group), and use the average
+of those as an approximation to our other groups pre-test score. To be explicit,
+following is the exact R code used to compute this test for Study 1 in
+Chapter~\ref{chap:mechanism}:
 
-% If you have time and energy, it might be nice to type-set this better
-% Also - looks like we can have about 78 characters like this, but that’s tight
+% looks like we can have about 78 characters with Inconsolata, but that’s tight
 \begin{minted}{r}
 # Here, dfs is pre-populated with the measured values. We assign the mean of
 # the sandwich (s) group scores to the pre-test scores for the no-pretest
