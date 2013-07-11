@@ -41,7 +41,8 @@ deps += appendices/graphical-models/graphical-models.tex \
 		appendices/400words/400words.tex \
 		appendices/survey-items/survey-items.tex \
 		appendices/numbers/numbers.tex \
-		appendices/NDI-intervention/NDI-intervention.tex \
+		appendices/Evil-NDI-intervention/Evil-NDI-intervention.tex \
+		appendices/Pro-NDI-intervention/Pro-NDI-intervention.tex \
 		appendices/coding/codingpacket-blind-Oct26.pdf \
 		appendices/coding/coding.tex \
 		appendices/imputation/imputation.tex
@@ -51,7 +52,8 @@ cleans += graphical-models/graphical-models.aux \
 		appendices/400words/400words.aux \
 		appendices/survey-items/survey-items.aux \
 		appendices/numbers/numbers.aux \
-		appendices/NDI-intervention/NDI-intervention.aux \
+		appendices/Evil-NDI-intervention/Evil-NDI-intervention.aux \
+		appendices/Pro-NDI-intervention/Pro-NDI-intervention.aux \
 		appendices/coding/coding.aux \
 		appendices/imputation/imputation.aux
 
