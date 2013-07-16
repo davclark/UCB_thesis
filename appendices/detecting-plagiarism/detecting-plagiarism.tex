@@ -4,21 +4,56 @@
 % Do I need to do some TM stuff here?
 
 First, one needs to set up a custom search engine at
-\href{http://www.google.com/cse}. It's not obvious from the documentation, but
-one needs to create a custom engine using some (any) URL, which allows for
-creation. After this, in the settings, one can enable searching the entire web,
-as well as removing the initial URL. Now, one has the ability to search using
-Google's Custom Search API using one's developer key and custom search engine
-ID.
+\url{http://www.google.com/cse}. A small number of queries are provided for free
+each day, beyond which the service requires a small payment per 1,000 queries.
+It's not obvious from the documentation, but to use the service one needs to
+create a custom engine using some (any) URL. The logic is that this service is
+for a “custom” search focused on your particular web properties. We, however,
+simply wish to get generic google results for our texts. Thus, after creating
+our custom-tailored search engine, in the settings, one can enable searching the
+entire web, and then remove the initial URL.  Now, one has the ability to
+search using Google's Custom Search API using one's developer key and custom
+search engine ID. The results are probably identical with what a regular google
+search would provide, but there is no guarantee from Google that this is the
+case.
 
 Google's API will accept a maximum of 32 search terms, and as such, I only used
 the first 32 terms from each text for search. Each API call will return a number
 of search hits, including “snippets” that match the text. In the case of
 plagiarism, this will be an almost exact match. Thus, there is a drastic
 decrease in “edit distance” in the case of copy-paste plagiarism. This can be
-seen easily in the scree plot in Chapter~\ref{chap:mechanism}.
+seen easily in Table~\ref{tab:plag-dists}.
+
+\begin{table}
+    \caption{Partial list of (sorted) distance measures from the top google hit for a
+        number of texts. As you can see, the first three rows are markedly
+        different from those that followed. The First column is a true
+        “distance” and as such, larger numbers indicate less similarity. The
+        “FuzzyWuzzy” measures are calculated as a percentage.}
+    \label{tab:plag-dists}
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        Levenshtein & FuzzyWuzzy & FuzzyWuzzy (partial) \\ 
+        \midrule
+        17	&  94	& 95 \\
+        17	&  94	& 95 \\
+        54	&  88	& 97 \\
+        134	&  32	& 31 \\
+        122	&  32	& 34 \\
+        146	&  32	& 37 \\
+        102	&  31	& 34 \\
+        127	&  30	& 35 \\
+        126	&  30	& 29 \\
+        139	&  30	& 30 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 The difference appears to be coarse enough that a variety of metrics are
 sufficient to separate out cases of plagiarism. Metrics evaluated were
-“FuzzyWuzzy” and the classic Levenshtein, or “edit” distance. Code is available
-upon request.
+“FuzzyWuzzy” (provided by SeatGeek at
+\url{https://github.com/seatgeek/fuzzywuzzy}) and the classic Levenshtein, or
+“edit” distance from the NLTK package (available at \url{http://nltk.org/}). Both
+of these are measures of partial string similarity. The code used to perform
+these analyses is available upon request.
