@@ -429,7 +429,8 @@ $\:\overline{~~~~ \mbox{\rule{0in}{0.16in}\small ~\hspace{3.5in} Date }}\:$ \\
 \vspace{1in}
 © Copyright \@degreeyear\par
 by\par
-\@author}
+\@author\par
+All Rights Reserved}
 \end{center}
 \end{alwayssingle}}
 
