@@ -220,7 +220,7 @@
 %                  ~~~~~~~~~~~~~~
 %
 % \thebibliography:
-\def\bibname{Bibliography}
+% \def\bibname{Bibliography}
 %            ~~~~~~~~~~~~
 %
 % \theindex:
@@ -948,25 +948,25 @@ University of California, {\@campus}\par
 %%               as it says in the comment in latex.tex
 %% RmS 92/01/14: Set \p@enumiv to {} and \theenumiv to \arabic{enumiv}
 %%               to get correct references
-\def\thebibliography#1{\chapter*{\bibname\@mkboth
-  {\uppercase{\bibname}}{\uppercase{\bibname}}}
-  \addcontentsline{toc}{chapter}{\bibname}
-  \list{\@biblabel{\arabic{enumiv}}}{\settowidth\labelwidth{\@biblabel{#1}}%
-    \leftmargin\labelwidth
-    \advance\leftmargin\labelsep
-    \usecounter{enumiv}%
-    \let\p@enumiv\@empty
-    \def\theenumiv{\arabic{enumiv}}}%
-    \def\newblock{\hskip .11em plus.33em minus.07em}%
-    \sloppy\clubpenalty4000\widowpenalty4000
-    \sfcode`\.=\@m}
+% \def\thebibliography#1{\chapter*{\bibname\@mkboth
+%   {\uppercase{\bibname}}{\uppercase{\bibname}}}
+%   \addcontentsline{toc}{chapter}{\bibname}
+%   \list{\@biblabel{\arabic{enumiv}}}{\settowidth\labelwidth{\@biblabel{#1}}%
+%     \leftmargin\labelwidth
+%     \advance\leftmargin\labelsep
+%     \usecounter{enumiv}%
+%     \let\p@enumiv\@empty
+%     \def\theenumiv{\arabic{enumiv}}}%
+%     \def\newblock{\hskip .11em plus.33em minus.07em}%
+%     \sloppy\clubpenalty4000\widowpenalty4000
+%     \sfcode`\.=\@m}
 
 
 %% 91/08/26 FMI & RmS: introduced warning instead of error
 
-\def\endthebibliography{%
-  \def\@noitemerr{\@warning{Empty `thebibliography' environment}}%
-  \endlist}
+% \def\endthebibliography{%
+%   \def\@noitemerr{\@warning{Empty `thebibliography' environment}}%
+%   \endlist}
 
 
 % \def\@biblabel#1{[#1]\hfill}  % Produces the label for a \bibitem[...]
