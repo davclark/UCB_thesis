@@ -74,7 +74,9 @@
 \usepackage[american]{babel}
 \usepackage{csquotes}
 
-\usepackage[style=apa,backend=biber]{biblatex}
+% uniquelist fixes a bug in mis-interpreting APA section 6.12, fixed in v. 6.1
+% of the apa style
+\usepackage[style=apa,uniquelist=minyear,backend=biber]{biblatex}
 
 % More i18n overkill
 \DeclareLanguageMapping{american}{american-apa}
