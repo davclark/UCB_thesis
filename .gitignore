@@ -17,3 +17,4 @@
 /thesis.toc
 .DS_Store
 *.pyg
+_minted-thesis/

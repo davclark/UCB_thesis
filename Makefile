@@ -1,6 +1,6 @@
 # This work is dedicated to the public domain.
 
-default: thesis.pdf # default target if you just type "make"
+default: latexmk  # default target if you just type "make"
 
 
 # Resources and rules for the introductory chapter. Sample 'make' rule
